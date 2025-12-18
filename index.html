@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usman Ibne Affan — Online Quran Teaching</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1e3a5f;
+            --teal: #5a9b8f;
+            --mint: #8fccbb;
+            --dark: #0f2942;
+            --light: #f0f7f6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--light); 
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Emoji Support - Force proper rendering */
+        .emoji {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+            font-size: inherit;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        /* Bismillah Section */
+        .bismillah {
+            background: linear-gradient(135deg, var(--dark), var(--navy));
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--teal);
+            position: relative;
+            overflow: hidden;
+        }
+        .bismillah::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(143, 204, 187, 0.1) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .bismillah-text {
+            font-family: 'Amiri', serif;
+            font-size: 3rem;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.05em;
+            line-height: 1.6;
+            margin: 0;
+            animation: fadeIn 1.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .bismillah-decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .bismillah-line {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--mint), transparent);
+        }
+        .bismillah-star {
+            color: var(--mint);
+            font-size: 1.5rem;
+        }
+        
+        /* Header */
+        .header { 
+            background: white; 
+            padding: 1rem 2rem; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        .header:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+        .header-wrap { 
+            max-width: 1280px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo-box { 
+            display: flex; 
+            align-items: center; 
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .logo-img { 
+            width: 80px; 
+            height: 80px; 
+            filter: drop-shadow(0 2px 8px rgba(30,58,95,0.2));
+            transition: all 0.3s ease;
+        }
+        .logo-img:hover { 
+            filter: drop-shadow(0 4px 16px rgba(30,58,95,0.4));
+            transform: scale(1.05);
+        }
+        .logo-text h1 { 
+            font-size: 1.4rem; 
+            background: linear-gradient(135deg, var(--navy), var(--teal)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+        .logo-text p { font-size: 0.8rem; color: #64748b; text-transform: uppercase; font-weight: 600; }
+        
+        /* Hero */
+        .hero { 
+            background: linear-gradient(135deg, var(--dark), var(--navy), var(--teal)); 
+            color: white; 
+            padding: 5rem 2rem; 
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(143, 204, 187, 0.2) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+        .hero h2 { 
+            font-size: 3rem; 
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+        .hero p { 
+            font-size: 1.2rem; 
+            margin-bottom: 2rem; 
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Buttons */
+        .btn { 
+            display: inline-block; 
+            padding: 1rem 2rem; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        .btn-primary { 
+            background: linear-gradient(135deg, var(--teal), var(--mint)); 
+            color: white;
+            box-shadow: 0 4px 15px rgba(90, 155, 143, 0.3);
+        }
+        .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 25px rgba(90, 155, 143, 0.5);
+        }
+        .btn-secondary { 
+            background: #25D366; 
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .btn-secondary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+        }
+        
+        /* Sections */
+        .section { padding: 4rem 2rem; max-width: 1280px; margin: 0 auto; }
+        .section h3 { 
+            font-size: 2.5rem; 
+            text-align: center; 
+            margin-bottom: 3rem; 
+            background: linear-gradient(135deg, var(--navy), var(--teal)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        /* Grid & Cards */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+        }
+        .card { 
+            background: white; 
+            padding: 2rem; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            border-top: 4px solid var(--teal);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(90, 155, 143, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        .card:hover::before {
+            left: 100%;
+        }
+        .card:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            box-shadow: 0 12px 35px rgba(90, 155, 143, 0.3);
+            border-top-color: var(--mint);
+        }
+        .card h4 { 
+            color: var(--navy); 
+            margin-bottom: 1rem; 
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+        .card:hover h4 { color: var(--teal); }
+        .card p { 
+            color: #64748b; 
+            line-height: 1.7;
+            transition: color 0.3s ease;
+        }
+        .card:hover p { color: #475569; }
+        
+        /* Plan Cards - Subtle Animations */
+        .plan-card {
+            transition: all 0.3s ease;
+        }
+        .plan-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 12px 30px rgba(90, 155, 143, 0.25) !important;
+        }
+        .plan-card:hover > div:first-child > div:first-child {
+            transform: scale(1.05);
+        }
+        .plan-card[style*="gradient"] {
+            transform: scale(1.05);
+        }
+        .plan-card[style*="gradient"]:hover {
+            transform: scale(1.05) translateY(-8px) !important;
+            box-shadow: 0 15px 35px rgba(30, 58, 95, 0.3) !important;
+        }
+        
+        /* Course Cards */
+        .course-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .course-card:hover {
+            transform: translateY(-12px) rotate(-1deg);
+            box-shadow: 0 15px 40px rgba(90, 155, 143, 0.35);
+        }
+        .course-header {
+            background: linear-gradient(135deg, var(--navy), var(--teal));
+            padding: 2rem;
+            color: white;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .course-card:hover .course-header {
+            background: linear-gradient(135deg, var(--teal), var(--mint));
+        }
+        .course-level {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .course-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .course-body {
+            padding: 2rem;
+        }
+        .course-features {
+            list-style: none;
+        }
+        .course-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        .course-features li:hover {
+            transform: translateX(5px);
+        }
+        .course-features li::before {
+            content: '?';
+            color: var(--teal);
+            font-weight: 700;
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--teal);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        .testimonial-card::after {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 5rem;
+            color: rgba(90, 155, 143, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(90, 155, 143, 0.3);
+            border-left-color: var(--mint);
+        }
+        .rating {
+            color: #FFA500;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .testimonial-text {
+            font-style: italic;
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--navy), var(--teal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover .avatar {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .author-name {
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .author-location {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        
+        /* Form */
+        .form-section {
+            background: linear-gradient(135deg, var(--dark), var(--navy), var(--teal));
+            color: white;
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            margin: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(143, 204, 187, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .form-box { 
+            background: white; 
+            padding: 2rem; 
+            border-radius: 16px; 
+            max-width: 600px; 
+            margin: 2rem auto; 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2); 
+            border-top: 4px solid var(--teal);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        .form-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 0.5rem; 
+            font-weight: 600; 
+            color: var(--navy); 
+        }
+        .form-group input, .form-group select { 
+            width: 100%; 
+            padding: 0.8rem; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 8px; 
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus, .form-group select:focus { 
+            outline: none; 
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(90, 155, 143, 0.1);
+            transform: translateY(-2px);
+        }
+        .success { 
+            display: none; 
+            background: var(--teal); 
+            color: white; 
+            padding: 1rem; 
+            border-radius: 8px; 
+            margin-top: 1rem; 
+            text-align: center;
+            animation: slideIn 0.5s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Footer */
+        .footer { 
+            background: linear-gradient(135deg, var(--dark), var(--navy)); 
+            color: white; 
+            padding: 3rem 2rem; 
+            text-align: center; 
+            margin-top: 4rem; 
+        }
+        .footer h3 { 
+            color: var(--mint); 
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .footer p { 
+            margin: 0.5rem 0; 
+            opacity: 0.9;
+        }
+        
+        /* Floating WhatsApp */
+        .floating-wa {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .floating-wa:hover {
+            transform: scale(1.15);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7); }
+        }
+        .floating-wa svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .header-wrap {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .nav-menu {
+                display: none !important;
+            }
+            .mobile-toggle {
+                display: flex !important;
+                order: 3;
+            }
+            .logo-box {
+                order: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-wrap {
+                position: relative;
+            }
+            .logo-box {
+                flex: 1;
+            }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 2rem;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+                gap: 0;
+                z-index: 1000;
+            }
+            .nav-menu.active {
+                display: flex !important;
+            }
+            .nav-link {
+                padding: 1rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                width: 100%;
+                font-size: 1.1rem;
+            }
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            .mobile-toggle {
+                display: flex !important;
+                z-index: 10;
+            }
+            .bismillah-text {
+                font-size: 2rem !important;
+                line-height: 1.8 !important;
+            }
+            .bismillah {
+                padding: 2rem 1rem !important;
+            }
+            .bismillah-decoration {
+                gap: 1rem !important;
+            }
+            .bismillah-line {
+                width: 50px !important;
+            }
+            .logo-img {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            .logo-text h1 {
+                font-size: 1.1rem !important;
+            }
+            .logo-text p {
+                font-size: 0.7rem !important;
+            }
+            .hero h2 { 
+                font-size: 1.8rem !important;
+                line-height: 1.2 !important;
+            }
+            .hero p {
+                font-size: 1rem !important;
+            }
+            .hero-cta {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .section h3 { font-size: 1.8rem !important; }
+            .grid { grid-template-columns: 1fr !important; }
+            .form-section { margin: 1rem !important; padding: 2rem 1rem !important; }
+            .form-box { padding: 1.5rem !important; }
+            .hero { padding: 3rem 1.5rem !important; }
+            .section { padding: 3rem 1rem !important; }
+            .card { padding: 1.5rem !important; }
+            .course-card { margin-bottom: 1.5rem; }
+            .testimonial-card { padding: 1.5rem !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bismillah Section -->
+    <section class="bismillah">
+        <h2 class="bismillah-text">?????? ????? ??????????? ???????????</h2>
+        <div class="bismillah-decoration">
+            <div class="bismillah-line"></div>
+            <span class="bismillah-star">?</span>
+            <div class="bismillah-line"></div>
+        </div>
+    </section>
+
+    <header class="header">
+        <div class="header-wrap">
+            <div class="logo-box">
+                <svg class="logo-img" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer circle with gradient -->
+                    <defs>
+                        <linearGradient id="outerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#2d5a7b;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#5a9b8f;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="innerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8fccbb;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#5a9b8f;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="shine">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+                        </radialGradient>
+                        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                            <feOffset dx="0" dy="4" result="offsetblur"/>
+                            <feComponentTransfer>
+                                <feFuncA type="linear" slope="0.3"/>
+                            </feComponentTransfer>
+                            <feMerge>
+                                <feMergeNode/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Shadow circle -->
+                    <circle cx="100" cy="104" r="90" fill="rgba(0,0,0,0.15)" filter="url(#shadow)"/>
+                    
+                    <!-- Outer decorative ring -->
+                    <circle cx="100" cy="100" r="95" fill="none" stroke="url(#outerGrad)" stroke-width="4" opacity="0.5"/>
+                    <circle cx="100" cy="100" r="92" fill="none" stroke="url(#outerGrad)" stroke-width="8"/>
+                    
+                    <!-- Middle ring with gradient -->
+                    <circle cx="100" cy="100" r="78" fill="url(#innerGrad)" opacity="0.3"/>
+                    <circle cx="100" cy="100" r="78" fill="none" stroke="#5a9b8f" stroke-width="3"/>
+                    
+                    <!-- Inner white circle (base) -->
+                    <circle cx="100" cy="100" r="70" fill="#f8f9fa"/>
+                    
+                    <!-- Subtle inner shadow -->
+                    <circle cx="100" cy="100" r="70" fill="url(#shine)"/>
+                    
+                    <!-- Islamic pattern background -->
+                    <g opacity="0.1">
+                        <path d="M 100 40 L 110 60 L 100 80 L 90 60 Z" fill="#1e3a5f"/>
+                        <path d="M 100 120 L 110 140 L 100 160 L 90 140 Z" fill="#1e3a5f"/>
+                        <path d="M 40 100 L 60 110 L 80 100 L 60 90 Z" fill="#1e3a5f"/>
+                        <path d="M 120 100 L 140 110 L 160 100 L 140 90 Z" fill="#1e3a5f"/>
+                    </g>
+                    
+                    <!-- Main Quran/Book icon -->
+                    <g transform="translate(100, 85)">
+                        <!-- Book base -->
+                        <rect x="-25" y="-20" width="50" height="40" rx="2" fill="url(#outerGrad)" filter="url(#shadow)"/>
+                        
+                        <!-- Book pages edge -->
+                        <rect x="-23" y="-18" width="2" height="36" fill="#fff" opacity="0.6"/>
+                        <rect x="-21" y="-17" width="1" height="34" fill="#fff" opacity="0.4"/>
+                        
+                        <!-- Book cover shine -->
+                        <rect x="-24" y="-19" width="48" height="15" rx="2" fill="url(#shine)" opacity="0.3"/>
+                        
+                        <!-- Decorative lines on book -->
+                        <line x1="-20" y1="-10" x2="20" y2="-10" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                        <line x1="-20" y1="0" x2="20" y2="0" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                        <line x1="-20" y1="10" x2="20" y2="10" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                    </g>
+                    
+                    <!-- Crescent moon (Islamic symbol) -->
+                    <g transform="translate(100, 50)">
+                        <path d="M 0 0 Q -8 -12, 0 -18 Q 5 -12, 0 0" fill="#8fccbb" filter="url(#shadow)"/>
+                        <circle cx="3" cy="-20" r="3" fill="#8fccbb"/>
+                    </g>
+                    
+                    <!-- Bottom text "UA" with 3D effect -->
+                    <g transform="translate(100, 145)">
+                        <!-- Shadow text -->
+                        <text x="0" y="2" font-family="Inter, Arial" font-size="24" font-weight="800" text-anchor="middle" fill="rgba(0,0,0,0.2)">UA</text>
+                        <!-- Main text with gradient -->
+                        <text x="0" y="0" font-family="Inter, Arial" font-size="24" font-weight="800" text-anchor="middle" fill="url(#outerGrad)">UA</text>
+                    </g>
+                    
+                    <!-- Top highlight for 3D effect -->
+                    <ellipse cx="100" cy="35" rx="35" ry="8" fill="url(#shine)" opacity="0.2"/>
+                    
+                    <!-- Decorative corner elements -->
+                    <circle cx="30" cy="100" r="3" fill="#8fccbb" opacity="0.4"/>
+                    <circle cx="170" cy="100" r="3" fill="#8fccbb" opacity="0.4"/>
+                    <circle cx="100" cy="30" r="3" fill="#8fccbb" opacity="0.4"/>
+                    <circle cx="100" cy="170" r="3" fill="#8fccbb" opacity="0.4"/>
+                </svg>
+                <div class="logo-text">
+                    <h1>Usman Ibne Affan</h1>
+                    <p>Online Quran Teaching</p>
+                </div>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#courses" class="nav-link">Courses</a>
+                <a href="#plans" class="nav-link">Plans</a>
+                <a href="#stats" class="nav-link">Success Stories</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Learn Quran Online from Home</h2>
+        <p>Qualified Teachers • 3 Days Free Trial • No Registration Fee • 50% Discount</p>
+        <a href="https://wa.me/923181032854" class="btn btn-secondary">
+            <span style="position: relative; z-index: 1;"><span class="emoji">??</span> WhatsApp Now</span>
+        </a>
+        <a href="mailto:hafizhuzaifaansari8@gmail.com" class="btn btn-primary">
+            <span style="position: relative; z-index: 1;"><span class="emoji">??</span> Email Us</span>
+        </a>
+    </section>
+
+    <section class="section" id="about">
+        <h3>Why Choose Us</h3>
+        <div class="grid">
+            <div class="card">
+                <h4><span class="emoji">??</span> Qualified Teachers</h4>
+                <p>Learn from certified Islamic scholars with Ijazah and years of teaching experience in Quranic studies.</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">??</span> Learn from Home</h4>
+                <p>Convenient online classes that fit your schedule. No commute, just quality education from your home.</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">??</span> Affordable Pricing</h4>
+                <p>Quality education at reasonable rates with 50% discount for new students. No hidden costs or registration fees.</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">??</span> Structured Curriculum</h4>
+                <p>Step-by-step learning path from basics to advanced levels with clear milestones and progress tracking.</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">?</span> Flexible Timing</h4>
+                <p>Choose class times that work best for you. Morning, afternoon, evening, or night slots available.</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">??</span> Special Offer</h4>
+                <p>Get 50% discount on your first month as a new student. 3 days free trial with no obligation!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- COURSES SECTION -->
+    <!-- ============================================ -->
+    <section class="section" id="courses" style="background: white; padding: 4rem 2rem; border-radius: 24px; margin: 2rem; border-top: 5px solid var(--teal);">
+        <h3>Our Courses</h3>
+        <div class="grid">
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Beginner</span>
+                    <h4 class="course-title"><span class="emoji">??</span> Qaida</h4>
+                    <p>Foundation Course</p>
+                </div>
+                <div class="course-body">
+                    <p style="color: #64748b; margin-bottom: 1rem;">Build a strong foundation in Arabic alphabets, vowels, and pronunciation. Perfect for complete beginners.</p>
+                    <ul class="course-features">
+                        <li>Arabic alphabet recognition</li>
+                        <li>Proper pronunciation (Makharij)</li>
+                        <li>Basic joining rules</li>
+                        <li>Duration: 2-3 months</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Intermediate</span>
+                    <h4 class="course-title"><span class="emoji">??</span> Quran with Tajweed</h4>
+                    <p>Advanced Recitation</p>
+                </div>
+                <div class="course-body">
+                    <p style="color: #64748b; margin-bottom: 1rem;">Master the art of beautiful Quranic recitation with complete Tajweed rules and proper articulation.</p>
+                    <ul class="course-features">
+                        <li>Complete Tajweed rules</li>
+                        <li>Makharij ul Huroof</li>
+                        <li>Sifaat (characteristics)</li>
+                        <li>Duration: 6-12 months</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Advanced</span>
+                    <h4 class="course-title"><span class="emoji">??</span> Quran with Translation</h4>
+                    <p>Understanding the Message</p>
+                </div>
+                <div class="course-body">
+                    <p style="color: #64748b; margin-bottom: 1rem;">Understand the divine message with word-by-word translation and contextual interpretation.</p>
+                    <ul class="course-features">
+                        <li>Word-by-word translation</li>
+                        <li>Verse meanings & context</li>
+                        <li>Basic Tafsir</li>
+                        <li>Duration: 12-18 months</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-header" style="background: linear-gradient(135deg, var(--navy), var(--teal));">
+                    <span class="course-level">Ultra-Advanced</span>
+                    <h4 class="course-title"><span class="emoji">??</span> Hadith Studies</h4>
+                    <p>??? ??????</p>
+                </div>
+                <div class="course-body">
+                    <p style="color: #64748b; margin-bottom: 1rem;">Advanced Hadith studies including methodology, classification, and application in Islamic jurisprudence.</p>
+                    <ul class="course-features">
+                        <li>Hadith methodology (????? ??????)</li>
+                        <li>Authentication & classification</li>
+                        <li>Major Hadith collections</li>
+                        <li>Duration: 6 months / 3 sessions per week</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-header" style="background: linear-gradient(135deg, var(--teal), var(--mint));">
+                    <span class="course-level">Ultra-Advanced</span>
+                    <h4 class="course-title"><span class="emoji">??</span> Arabic Grammar</h4>
+                    <p>????? ??????</p>
+                </div>
+                <div class="course-body">
+                    <p style="color: #64748b; margin-bottom: 1rem;">Intensive Arabic grammar course for Quranic and Hadith understanding, covering syntax and morphology.</p>
+                    <ul class="course-features">
+                        <li>Advanced syntax (?????)</li>
+                        <li>Morphology (?????)</li>
+                        <li>Quranic Arabic patterns</li>
+                        <li>Duration: 6 months / 3 sessions per week</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- OFFER PLANS SECTION -->
+    <!-- ============================================ -->
+    <section class="section" id="plans" style="background: linear-gradient(135deg, #f0f7f6 0%, white 100%); padding: 5rem 2rem; border-top: 5px solid var(--teal);">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <div style="display: inline-block; background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;"><span class="emoji">??</span> SPECIAL OFFERS</div>
+            <h3 style="font-size: 2.8rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--navy), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Our Offer Plans</h3>
+            <p style="color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Choose the perfect plan for your Quranic learning journey with exclusive free courses included!</p>
+        </div>
+
+        <div class="grid grid-3" style="max-width: 1200px; margin: 0 auto;">
+            <!-- BASIC PLAN -->
+            <div class="card plan-card" style="background: white; border-radius: 20px; padding: 2.5rem; border: 3px solid rgba(90, 155, 143, 0.3); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(90, 155, 143, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+                
+                <div style="text-align: center; margin-bottom: 2rem; position: relative; z-index: 1;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--teal), var(--mint)); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(90, 155, 143, 0.3); transition: all 0.3s ease;">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L3 7V17.5C3 20.5 7 22 12 22C17 22 21 20.5 21 17.5V7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 22V12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 12L3 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 12L21 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 style="color: var(--navy); font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 800;">Basic Plan</h4>
+                    <div style="background: linear-gradient(135deg, var(--teal), var(--mint)); color: white; padding: 0.5rem 1rem; border-radius: 50px; display: inline-block; font-weight: 700; font-size: 0.9rem; margin-top: 0.5rem;">3 Days / Week</div>
+                </div>
+
+                <div style="background: rgba(90, 155, 143, 0.05); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--teal);">
+                    <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700;"><span class="emoji">?</span> Free Course Included:</h5>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 0.5rem 0; color: #475569; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--teal); font-weight: 700;">?</span>
+                            Seerat-un-Nabi (Basic Level)
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="padding: 1rem; background: linear-gradient(135deg, rgba(90, 155, 143, 0.08), rgba(143, 204, 187, 0.08)); border-radius: 10px; border: 1px dashed var(--teal);">
+                    <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0; text-align: center;">
+                        <strong style="color: var(--navy);">Perfect starter plan</strong> for students who want consistent weekly learning with essential knowledge of the Prophet's life.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STANDARD PLAN - MOST POPULAR -->
+            <div class="card plan-card" style="background: linear-gradient(135deg, var(--navy), var(--teal)); color: white; border-radius: 20px; padding: 2.5rem; border: none; position: relative; overflow: hidden; transform: scale(1.05); box-shadow: 0 15px 50px rgba(30, 58, 95, 0.4);">
+                <div style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark); padding: 0.4rem 1rem; border-radius: 50px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);">? Most Popular</div>
+                
+                <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(143, 204, 187, 0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+                
+                <div style="text-align: center; margin-bottom: 2rem; position: relative; z-index: 1;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 style="color: white; font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 800;">Standard Plan</h4>
+                    <div style="background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); color: white; padding: 0.5rem 1rem; border-radius: 50px; display: inline-block; font-weight: 700; font-size: 0.9rem; margin-top: 0.5rem; border: 2px solid rgba(255,255,255,0.3);">4 Days / Week</div>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--mint); border: 2px solid rgba(255,255,255,0.2);">
+                    <h5 style="color: white; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700;"><span class="emoji">?</span> Free Courses Included:</h5>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 0.5rem 0; color: rgba(255,255,255,0.95); display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--mint); font-weight: 700;">?</span>
+                            Seerat-un-Nabi (Basic Level)
+                        </li>
+                        <li style="padding: 0.5rem 0; color: rgba(255,255,255,0.95); display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: var(--mint); font-weight: 700;">?</span>
+                            Seerat-un-Nabi (Beginner Level)
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="padding: 1rem; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 10px; border: 2px solid rgba(255,255,255,0.3);">
+                    <p style="color: rgba(255,255,255,0.95); font-size: 0.95rem; line-height: 1.6; margin: 0; text-align: center;">
+                        <strong style="color: white;">Best value for dedicated learners!</strong> Balanced schedule with comprehensive Seerah knowledge from basic to beginner mastery.
+                    </p>
+                </div>
+            </div>
+
+            <!-- PREMIUM PLAN -->
+            <div class="card plan-card" style="background: white; border-radius: 20px; padding: 2.5rem; border: 3px solid rgba(212, 175, 55, 0.4); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%); border-radius: 50%;"></div>
+                
+                <div style="text-align: center; margin-bottom: 2rem; position: relative; z-index: 1;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #d4af37, #f4d58d); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4); transition: all 0.3s ease;">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="3" fill="white"/>
+                        </svg>
+                    </div>
+                    <h4 style="color: var(--navy); font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 800;">Premium Plan</h4>
+                    <div style="background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark); padding: 0.5rem 1rem; border-radius: 50px; display: inline-block; font-weight: 700; font-size: 0.9rem; margin-top: 0.5rem;">5 Days / Week</div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(244, 213, 141, 0.08)); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid #d4af37; border: 2px solid rgba(212, 175, 55, 0.2);">
+                    <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700;"><span class="emoji">?</span> Free Courses Included:</h5>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 0.5rem 0; color: #475569; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #d4af37; font-weight: 700;">?</span>
+                            Seerat-un-Nabi (Basic Level)
+                        </li>
+                        <li style="padding: 0.5rem 0; color: #475569; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #d4af37; font-weight: 700;">?</span>
+                            Seerat-un-Nabi (Beginner Level)
+                        </li>
+                        <li style="padding: 0.5rem 0; color: #475569; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #d4af37; font-weight: 700;">?</span>
+                            Seerat-un-Nabi (Advanced Level)
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="padding: 1rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(244, 213, 141, 0.1)); border-radius: 10px; border: 1px dashed #d4af37;">
+                    <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0; text-align: center;">
+                        <strong style="color: var(--navy);">Ultimate learning experience!</strong> Maximum weekly classes with complete Seerah mastery from basic to advanced expertise.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benefits Comparison -->
+        <div style="max-width: 900px; margin: 4rem auto 0; padding: 2.5rem; background: white; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top: 4px solid var(--teal);">
+            <h4 style="text-align: center; color: var(--navy); font-size: 1.6rem; margin-bottom: 2rem; font-weight: 800;"><span class="emoji">??</span> Why Choose Our Plans?</h4>
+            <div class="grid grid-3" style="gap: 2rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;"><span class="emoji">??</span></div>
+                    <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;">Best Value</h5>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Get free premium courses worth thousands included in every plan</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;"><span class="emoji">?</span></div>
+                    <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;">Flexible Schedule</h5>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Choose the frequency that fits your lifestyle and commitment level</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;"><span class="emoji">??</span></div>
+                    <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;">Complete Package</h5>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Learn Quran AND gain deep knowledge of Prophet's blessed life</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SUCCESS STATS SECTION - PUBLIC DASHBOARD -->
+    <!-- ============================================ -->
+    <section class="section" id="stats" style="background: linear-gradient(180deg, #f8fafc 0%, white 100%); padding: 5rem 2rem; border-top: 5px solid var(--teal);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge" style="background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark);">? OUR ACHIEVEMENTS</div>
+                <h2 class="section-title" style="font-size: 3rem;">Trusted by Students Worldwide</h2>
+                <p class="section-description" style="font-size: 1.15rem;">Join thousands of students who have transformed their lives through Quranic education. See why we're the most trusted online Quran teaching platform!</p>
+            </div>
+
+            <!-- Impressive Global Stats -->
+            <div class="grid grid-3" style="margin-bottom: 4rem;">
+                <div class="card" style="background: linear-gradient(135deg, #1e3a5f, #2d5a7b); color: white; border-top: none; text-align: center; padding: 3.5rem 2rem; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; opacity: 0.1;">??</div>
+                    <div style="font-size: 4rem; margin-bottom: 1rem; position: relative; z-index: 1;">??</div>
+                    <p style="font-size: 4rem; font-weight: 800; color: white; margin: 0; line-height: 1;">500+</p>
+                    <h4 style="color: var(--mint); font-size: 1.3rem; margin-top: 0.5rem; font-weight: 700;">Students Worldwide</h4>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-top: 0.5rem;">Learning from 25+ countries including UK, USA, Canada, UAE & Pakistan</p>
+                </div>
+                <div class="card" style="background: linear-gradient(135deg, #5a9b8f, #8fccbb); color: white; border-top: none; text-align: center; padding: 3.5rem 2rem; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; opacity: 0.1;">??</div>
+                    <div style="font-size: 4rem; margin-bottom: 1rem; position: relative; z-index: 1;">??</div>
+                    <p style="font-size: 4rem; font-weight: 800; color: white; margin: 0; line-height: 1;">1000+</p>
+                    <h4 style="color: white; font-size: 1.3rem; margin-top: 0.5rem; font-weight: 700;">Qurans Completed</h4>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-top: 0.5rem;">With perfect Tajweed and beautiful recitation</p>
+                </div>
+                <div class="card" style="background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark); border-top: none; text-align: center; padding: 3.5rem 2rem; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; opacity: 0.1;">?</div>
+                    <div style="font-size: 4rem; margin-bottom: 1rem; position: relative; z-index: 1;">?</div>
+                    <p style="font-size: 4rem; font-weight: 800; color: var(--dark); margin: 0; line-height: 1;">98%</p>
+                    <h4 style="color: var(--dark); font-size: 1.3rem; margin-top: 0.5rem; font-weight: 700;">Success Rate</h4>
+                    <p style="color: rgba(0,0,0,0.7); font-size: 0.95rem; margin-top: 0.5rem;">Students achieve their Quranic learning goals</p>
+                </div>
+            </div>
+
+            <!-- Most Popular Courses with Progress Bars -->
+            <div style="background: white; border-radius: 24px; padding: 3.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.1); margin-bottom: 4rem; border: 2px solid rgba(90, 155, 143, 0.1);">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h3 style="color: var(--navy); font-size: 2.3rem; margin-bottom: 0.5rem;">?? Most Popular Courses</h3>
+                    <p style="color: #64748b; font-size: 1.05rem;">See what our students are learning right now</p>
+                </div>
+                <div class="grid grid-2" style="gap: 2.5rem;">
+                    <div style="padding: 1.5rem; background: rgba(90, 155, 143, 0.03); border-radius: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem;">?? Quran with Tajweed</span>
+                            <span style="font-weight: 800; color: var(--teal); font-size: 1.1rem;">245 Students</span>
+                        </div>
+                        <div style="background: #e2e8f0; height: 14px; border-radius: 10px; overflow: hidden; position: relative;">
+                            <div style="background: linear-gradient(90deg, var(--teal), var(--mint)); height: 100%; width: 85%; border-radius: 10px; box-shadow: 0 2px 8px rgba(90, 155, 143, 0.3);"></div>
+                        </div>
+                        <p style="color: #64748b; font-size: 0.85rem; margin-top: 0.5rem;">85% enrollment rate</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(90, 155, 143, 0.03); border-radius: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem;">?? Qaida (Beginner)</span>
+                            <span style="font-weight: 800; color: var(--teal); font-size: 1.1rem;">189 Students</span>
+                        </div>
+                        <div style="background: #e2e8f0; height: 14px; border-radius: 10px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, var(--teal), var(--mint)); height: 100%; width: 70%; border-radius: 10px; box-shadow: 0 2px 8px rgba(90, 155, 143, 0.3);"></div>
+                        </div>
+                        <p style="color: #64748b; font-size: 0.85rem; margin-top: 0.5rem;">70% enrollment rate</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(90, 155, 143, 0.03); border-radius: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem;">?? Quran with Translation</span>
+                            <span style="font-weight: 800; color: var(--teal); font-size: 1.1rem;">156 Students</span>
+                        </div>
+                        <div style="background: #e2e8f0; height: 14px; border-radius: 10px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, var(--teal), var(--mint)); height: 100%; width: 60%; border-radius: 10px; box-shadow: 0 2px 8px rgba(90, 155, 143, 0.3);"></div>
+                        </div>
+                        <p style="color: #64748b; font-size: 0.85rem; margin-top: 0.5rem;">60% enrollment rate</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(212, 175, 55, 0.05); border-radius: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem;">?? Hadith Studies</span>
+                            <span style="font-weight: 800; color: #d4af37; font-size: 1.1rem;">67 Students</span>
+                        </div>
+                        <div style="background: #e2e8f0; height: 14px; border-radius: 10px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, #d4af37, #f4d58d); height: 100%; width: 45%; border-radius: 10px; box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);"></div>
+                        </div>
+                        <p style="color: #64748b; font-size: 0.85rem; margin-top: 0.5rem;">Advanced level course</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="grid grid-3" style="margin-bottom: 4rem;">
+                <div class="card" style="text-align: center; padding: 2.5rem; border: 2px solid rgba(90, 155, 143, 0.2);">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">??</div>
+                    <h4 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 0.7rem; font-weight: 700;">Excellence Award</h4>
+                    <p style="color: #64748b; font-size: 1rem; line-height: 1.6;">Recognized as top-rated online Quran teaching platform</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 2.5rem; border: 2px solid rgba(90, 155, 143, 0.2);">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">??</div>
+                    <h4 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 0.7rem; font-weight: 700;">Certified Teachers</h4>
+                    <p style="color: #64748b; font-size: 1rem; line-height: 1.6;">All instructors hold authentic Ijazah certificates</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 2.5rem; border: 2px solid rgba(90, 155, 143, 0.2);">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">??</div>
+                    <h4 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 0.7rem; font-weight: 700;">100% Online</h4>
+                    <p style="color: #64748b; font-size: 1rem; line-height: 1.6;">Learn from anywhere with flexible scheduling</p>
+                </div>
+            </div>
+
+            <!-- Student Success Gallery -->
+            <div style="background: linear-gradient(135deg, var(--navy), var(--teal)); border-radius: 24px; padding: 4rem 3rem; color: white; text-align: center; box-shadow: 0 12px 40px rgba(30, 58, 95, 0.3);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">??</div>
+                <h3 style="color: white; font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 800;">Real Student Success Stories</h3>
+                <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; margin-bottom: 3rem; max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.7;">Every month, dozens of students complete their Quran journey with us. Their success is our pride. Join them and make your family proud!</p>
+                
+                <div class="grid grid-3" style="margin-top: 2.5rem;">
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 20px; border: 2px solid rgba(255,255,255,0.2); transition: transform 0.3s ease;">
+                        <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">??</div>
+                        <h4 style="color: white; margin-bottom: 0.7rem; font-size: 1.3rem; font-weight: 700;">Ahmed Khan</h4>
+                        <p style="color: var(--mint); font-size: 0.9rem; margin-bottom: 0.7rem; font-weight: 600;">Age 10 • Pakistan</p>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6;">"Completed entire Quran with Tajweed in just 8 months! My teacher was so patient and helpful."</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 20px; border: 2px solid rgba(255,255,255,0.2);">
+                        <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">??</div>
+                        <h4 style="color: white; margin-bottom: 0.7rem; font-size: 1.3rem; font-weight: 700;">Fatima Ali</h4>
+                        <p style="color: var(--mint); font-size: 0.9rem; margin-bottom: 0.7rem; font-weight: 600;">Age 12 • London, UK</p>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6;">"Memorized 5 beautiful Surahs with perfect Tajweed. Best online Quran platform!"</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 20px; border: 2px solid rgba(255,255,255,0.2);">
+                        <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">??</div>
+                        <h4 style="color: white; margin-bottom: 0.7rem; font-size: 1.3rem; font-weight: 700;">Usman Hassan</h4>
+                        <p style="color: var(--mint); font-size: 0.9rem; margin-bottom: 0.7rem; font-weight: 600;">Age 25 • Dubai, UAE</p>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6;">"Mastered Arabic Grammar and now understand Quran deeply. Life-changing experience!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTA -->
+            <div style="text-align: center; margin-top: 4rem; padding: 3.5rem; background: linear-gradient(135deg, rgba(90, 155, 143, 0.08), rgba(143, 204, 187, 0.08)); border-radius: 24px; border: 3px dashed var(--teal);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">??</div>
+                <h3 style="color: var(--navy); font-size: 2.5rem; margin-bottom: 1.2rem; font-weight: 800;">Ready to Join 500+ Successful Students?</h3>
+                <p style="color: #64748b; font-size: 1.15rem; margin-bottom: 2.5rem; line-height: 1.7; max-width: 650px; margin-left: auto; margin-right: auto;">Start your blessed Quranic journey today with a <strong>3-day FREE trial</strong>. No payment required. No commitment. Just pure learning!</p>
+                <a href="#contact" class="btn btn-primary btn-lg" style="display: inline-flex; align-items: center; gap: 0.7rem; font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                    <span style="position: relative; z-index: 1;">? Start Your Free Trial Now</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- REVIEWS / TESTIMONIALS SECTION -->
+    <!-- ============================================ -->
+    <section class="section" id="reviews" style="background: linear-gradient(180deg, white 0%, #f8fafc 100%); border-top: 5px solid var(--teal); padding: 5rem 2rem;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <div style="display: inline-block; background: linear-gradient(135deg, var(--teal), var(--mint)); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">? STUDENT REVIEWS</div>
+            <h3 style="font-size: 2.8rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--navy), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">What Our Students Say</h3>
+            <p style="color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Real feedback from students and parents around the world</p>
+        </div>
+        <div class="grid">
+            <div class="testimonial-card">
+                <div class="rating">?????</div>
+                <p class="testimonial-text">"My daughter has been learning Quran for 6 months now. Her Tajweed has improved tremendously and she looks forward to every class. The teacher is very patient and knowledgeable. Highly recommended!"</p>
+                <div class="author">
+                    <div class="avatar">??</div>
+                    <div>
+                        <div class="author-name">Fatima Ahmed</div>
+                        <div class="author-location">Karachi, Pakistan</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">?????</div>
+                <p class="testimonial-text">"Living in the UK, it was challenging to find authentic Quran teachers. This online platform has been a blessing. The timing flexibility works perfectly with our schedule!"</p>
+                <div class="author">
+                    <div class="avatar">??</div>
+                    <div>
+                        <div class="author-name">Irfan Mahmood</div>
+                        <div class="author-location">London, UK</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">?????</div>
+                <p class="testimonial-text">"Excellent teaching methodology! My son started from zero and now he can read Quran fluently. The teacher uses interactive methods that keep children engaged. Worth every penny!"</p>
+                <div class="author">
+                    <div class="avatar">??</div>
+                    <div>
+                        <div class="author-name">Ayesha Malik</div>
+                        <div class="author-location">Islamabad, Pakistan</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">?????</div>
+                <p class="testimonial-text">"As a busy professional in Dubai, finding time for Quran learning was difficult. The flexible evening slots work perfectly for me. I've completed Qaida and now learning Tajweed. Alhamdulillah!"</p>
+                <div class="author">
+                    <div class="avatar">??</div>
+                    <div>
+                        <div class="author-name">Omar Abdullah</div>
+                        <div class="author-location">Dubai, UAE</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">?????</div>
+                <p class="testimonial-text">"We moved to Canada last year and were worried about our kids' Islamic education. Found this service online and it's been amazing! Professional, punctual, and excellent teaching quality."</p>
+                <div class="author">
+                    <div class="avatar">??</div>
+                    <div>
+                        <div class="author-name">Sarah Khan</div>
+                        <div class="author-location">Toronto, Canada</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">?????</div>
+                <p class="testimonial-text">"I wanted to learn Quran with proper Tajweed. The time difference was managed perfectly and my teacher is always on time. Now I can recite beautifully MashaAllah. JazakAllah!"</p>
+                <div class="author">
+                    <div class="avatar">??</div>
+                    <div>
+                        <div class="author-name">Ibrahim Ali</div>
+                        <div class="author-location">New York, USA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CONTACT / REGISTRATION SECTION -->
+    <!-- ============================================ -->
+    <section class="form-section" id="contact" style="border-top: 5px solid var(--teal);">
+        <h3 style="color: white; -webkit-text-fill-color: white;">Start Your 3 Days Free Trial</h3>
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; position: relative; z-index: 1;">Experience our teaching methodology with no commitment or obligation</p>
+        <div class="form-box">
+            <h4 style="text-align: center; margin-bottom: 1.5rem; color: var(--navy);">Register Now</h4>
+            <form id="trialForm">
+                <div class="form-group">
+                    <label>Student Name *</label>
+                    <input type="text" id="studentName" name="studentName" required placeholder="Enter student's full name">
+                </div>
+                <div class="form-group">
+                    <label>Age *</label>
+                    <input type="number" id="age" name="age" required min="4" placeholder="Age">
+                </div>
+                <div class="form-group">
+                    <label>Parent/Guardian Name *</label>
+                    <input type="text" id="parentName" name="parentName" required placeholder="Enter parent or guardian name">
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp Number *</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+92 3XX XXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label>Country *</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select your country...</option>
+                        <option value="Pakistan">???? Pakistan</option>
+                        <option value="United Kingdom">???? United Kingdom</option>
+                        <option value="United States">???? United States</option>
+                        <option value="Canada">???? Canada</option>
+                        <option value="United Arab Emirates">???? United Arab Emirates</option>
+                        <option value="Saudi Arabia">???? Saudi Arabia</option>
+                        <option value="Qatar">???? Qatar</option>
+                        <option value="Kuwait">???? Kuwait</option>
+                        <option value="Bahrain">???? Bahrain</option>
+                        <option value="Oman">???? Oman</option>
+                        <option value="Malaysia">???? Malaysia</option>
+                        <option value="Indonesia">???? Indonesia</option>
+                        <option value="Turkey">???? Turkey</option>
+                        <option value="Egypt">???? Egypt</option>
+                        <option value="Australia">???? Australia</option>
+                        <option value="South Africa">???? South Africa</option>
+                        <option value="Germany">???? Germany</option>
+                        <option value="France">???? France</option>
+                        <option value="Netherlands">???? Netherlands</option>
+                        <option value="India">???? India</option>
+                        <option value="Bangladesh">???? Bangladesh</option>
+                        <option value="Other">?? Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>City *</label>
+                    <input type="text" id="city" name="city" required placeholder="Enter your city">
+                </div>
+                <div class="form-group">
+                    <label>Preferred Currency *</label>
+                    <select id="currency" name="currency" required>
+                        <option value="">Select currency...</option>
+                        <option value="PKR">???? PKR - Pakistani Rupee</option>
+                        <option value="USD">???? USD - US Dollar</option>
+                        <option value="GBP">???? GBP - British Pound</option>
+                        <option value="EUR">???? EUR - Euro</option>
+                        <option value="AED">???? AED - UAE Dirham</option>
+                        <option value="SAR">???? SAR - Saudi Riyal</option>
+                        <option value="CAD">???? CAD - Canadian Dollar</option>
+                        <option value="AUD">???? AUD - Australian Dollar</option>
+                        <option value="MYR">???? MYR - Malaysian Ringgit</option>
+                        <option value="QAR">???? QAR - Qatari Riyal</option>
+                        <option value="KWD">???? KWD - Kuwaiti Dinar</option>
+                        <option value="Other">?? Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select Plan *</label>
+                    <select id="plan" name="plan" required>
+                        <option value="">Choose your plan...</option>
+                        <option value="Basic Plan (3 Days/Week)">?? Basic Plan (3 Days/Week)</option>
+                        <option value="Standard Plan (4 Days/Week)">?? Standard Plan (4 Days/Week) - Most Popular</option>
+                        <option value="Premium Plan (5 Days/Week)">?? Premium Plan (5 Days/Week)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select Course *</label>
+                    <select id="course" name="course" required>
+                        <option value="">Choose a course...</option>
+                        <optgroup label="?? Quranic Studies">
+                            <option>Qaida (Beginner)</option>
+                            <option>Quran with Tajweed</option>
+                            <option>Quran with Translation</option>
+                            <option>Kalima & Namaz</option>
+                            <option>Basic Qaida (Kids)</option>
+                            <option>Basic Quran Reading (Kids)</option>
+                        </optgroup>
+                        <optgroup label="? Ultra-Advanced Studies">
+                            <option>Hadith Studies (??? ??????)</option>
+                            <option>Arabic Grammar (????? ??????)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Timing *</label>
+                    <select id="timing" name="timing" required>
+                        <option value="">Select your preferred timing...</option>
+                        <option>Morning (8 AM - 12 PM)</option>
+                        <option>Afternoon (12 PM - 4 PM)</option>
+                        <option>Evening (4 PM - 8 PM)</option>
+                        <option>Night (8 PM - 11 PM)</option>
+                    </select>
+                </div>
+                <button type="button" id="submitBtn" onclick="handleSubmit(event)" class="btn btn-primary" style="width: 100%; margin-top: 1rem; cursor: pointer;">
+                    <span style="position: relative; z-index: 1;">?? Start My Free Trial Now</span>
+                </button>
+            </form>
+            <div id="successMsg" class="success">? Registration Successful! Redirecting to WhatsApp...</div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+            <svg style="width: 70px; height: 70px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#5a9b8f;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#8fccbb;stop-opacity:1" />
+                    </linearGradient>
+                    <radialGradient id="footerShine">
+                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+                        <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+                    </radialGradient>
+                </defs>
+                <circle cx="100" cy="100" r="95" fill="none" stroke="url(#footerGrad)" stroke-width="4" opacity="0.5"/>
+                <circle cx="100" cy="100" r="92" fill="none" stroke="url(#footerGrad)" stroke-width="8"/>
+                <circle cx="100" cy="100" r="78" fill="url(#footerGrad)" opacity="0.3"/>
+                <circle cx="100" cy="100" r="78" fill="none" stroke="#8fccbb" stroke-width="3"/>
+                <circle cx="100" cy="100" r="70" fill="#f8f9fa"/>
+                <circle cx="100" cy="100" r="70" fill="url(#footerShine)"/>
+                <g transform="translate(100, 85)">
+                    <rect x="-25" y="-20" width="50" height="40" rx="2" fill="url(#footerGrad)"/>
+                    <rect x="-23" y="-18" width="2" height="36" fill="#fff" opacity="0.6"/>
+                    <rect x="-24" y="-19" width="48" height="15" rx="2" fill="url(#footerShine)" opacity="0.3"/>
+                    <line x1="-20" y1="-10" x2="20" y2="-10" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                    <line x1="-20" y1="0" x2="20" y2="0" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                    <line x1="-20" y1="10" x2="20" y2="10" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                </g>
+                <g transform="translate(100, 50)">
+                    <path d="M 0 0 Q -8 -12, 0 -18 Q 5 -12, 0 0" fill="#8fccbb"/>
+                    <circle cx="3" cy="-20" r="3" fill="#8fccbb"/>
+                </g>
+                <text x="100" y="147" font-family="Inter, Arial" font-size="24" font-weight="800" text-anchor="middle" fill="url(#footerGrad)">UA</text>
+            </svg>
+            <h3>Usman Ibne Affan</h3>
+        </div>
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Online Quran Teaching</p>
+        
+        <!-- Social Media Links -->
+        <div style="margin: 2rem 0;">
+            <a href="https://www.facebook.com/share/1G1CzW23zH/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.7rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; color: white; transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.2); margin: 0 0.5rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                <span style="font-weight: 600; font-size: 1rem;">Follow us on Facebook</span>
+            </a>
+        </div>
+        
+        <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2);">
+            <p><strong>WhatsApp:</strong> +92 318 1032854</p>
+            <p><strong>Email:</strong> hafizhuzaifaansari8@gmail.com</p>
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 1rem;">© 2024 Usman Ibne Affan. All rights reserved.</p>
+        <p style="font-style: italic; color: var(--mint); margin-top: 1rem;">"The best among you are those who learn the Quran and teach it." - Prophet Muhammad (?)</p>
+    </footer>
+
+    <script>
+        // FORM SUBMISSION - SIMPLIFIED AND WORKING
+        function handleSubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            console.log('Form submitted - function called!'); // Debug
+            
+            // Get form values
+            const studentName = document.getElementById('studentName').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const parentName = document.getElementById('parentName').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const country = document.getElementById('country').value;
+            const city = document.getElementById('city').value.trim();
+            const currency = document.getElementById('currency').value;
+            const plan = document.getElementById('plan').value;
+            const course = document.getElementById('course').value;
+            const timing = document.getElementById('timing').value;
+            
+            // Validate
+            if (!studentName || !age || !parentName || !whatsapp || !country || !city || !currency || !plan || !course || !timing) {
+                alert('Please fill all fields!');
+                return false;
+            }
+            
+            console.log('All fields validated'); // Debug
+            
+            // Create WhatsApp message
+            const message = 
+                '*NEW STUDENT REGISTRATION*%0A%0A' +
+                '??????????????????????%0A' +
+                'STUDENT DETAILS:%0A' +
+                '?? Name: ' + encodeURIComponent(studentName) + '%0A' +
+                '?? Age: ' + age + ' years%0A%0A' +
+                'PARENT/GUARDIAN:%0A' +
+                '???????? Name: ' + encodeURIComponent(parentName) + '%0A' +
+                '?? Contact: ' + whatsapp + '%0A%0A' +
+                'LOCATION:%0A' +
+                '?? Country: ' + encodeURIComponent(country) + '%0A' +
+                '??? City: ' + encodeURIComponent(city) + '%0A' +
+                '?? Currency: ' + currency + '%0A%0A' +
+                'SELECTED PLAN:%0A' +
+                '?? Plan: ' + encodeURIComponent(plan) + '%0A%0A' +
+                'COURSE DETAILS:%0A' +
+                '?? Course: ' + encodeURIComponent(course) + '%0A' +
+                '? Timing: ' + encodeURIComponent(timing) + '%0A' +
+                '??????????????????????%0A%0A' +
+                'Please contact for 3-day FREE trial!';
+            
+            // Show success message
+            const successMsg = document.getElementById('successMsg');
+            const submitBtn = document.getElementById('submitBtn');
+            const trialForm = document.getElementById('trialForm');
+            
+            // Hide form, show success message
+            trialForm.style.display = 'none';
+            successMsg.style.display = 'block';
+            successMsg.textContent = '? Your form has been submitted successfully!';
+            
+            console.log('Opening WhatsApp...'); // Debug
+            
+            // Open WhatsApp in new tab
+            setTimeout(function() {
+                const whatsappURL = 'https://wa.me/923181032854?text=' + message;
+                window.open(whatsappURL, '_blank');
+                console.log('WhatsApp opened!'); // Debug
+            }, 500);
+            
+            // Reset form after 5 seconds
+            setTimeout(function() {
+                trialForm.reset();
+                trialForm.style.display = 'block';
+                successMsg.style.display = 'none';
+            }, 5000);
+            
+            return false;
+        }
+        
+        // Smooth scroll for hero buttons
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .course-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
