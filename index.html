@@ -23,11 +23,13 @@
             -moz-osx-font-smoothing: grayscale;
         }
         
-        /* Emoji Support - Force proper rendering */
-        .emoji {
-            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-            font-size: inherit;
-            display: inline-block;
+        /* Icon styling for SVG replacements */
+        .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.2em;
+            height: 1.2em;
             vertical-align: middle;
         }
         
@@ -55,17 +57,14 @@
             to { transform: rotate(360deg); }
         }
         .bismillah-text {
-            font-family: 'Amiri', serif;
-            font-size: 3rem;
-            color: white;
-            font-weight: 700;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            max-width: 90%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
             position: relative;
             z-index: 1;
-            letter-spacing: 0.05em;
-            line-height: 1.6;
-            margin: 0;
             animation: fadeIn 1.5s ease;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
@@ -352,7 +351,7 @@
             transform: translateX(5px);
         }
         .course-features li::before {
-            content: '?';
+            content: '✓';
             color: var(--teal);
             font-weight: 700;
         }
@@ -656,10 +655,22 @@
 <body>
     <!-- Bismillah Section -->
     <section class="bismillah">
-        <h2 class="bismillah-text">?????? ????? ??????????? ???????????</h2>
+        <svg class="bismillah-text" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg" style="max-width: 90%; height: auto; margin: 0 auto; display: block;">
+            <defs>
+                <linearGradient id="bismillahGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#8fccbb;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+                </linearGradient>
+                <filter id="bismillahShadow">
+                    <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.5"/>
+                </filter>
+            </defs>
+            <text x="400" y="70" font-family="'Traditional Arabic', 'Arabic Typesetting', 'Segoe UI', Arial" font-size="56" font-weight="bold" text-anchor="middle" fill="url(#bismillahGrad)" filter="url(#bismillahShadow)">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</text>
+        </svg>
         <div class="bismillah-decoration">
             <div class="bismillah-line"></div>
-            <span class="bismillah-star">?</span>
+            <span class="bismillah-star">✦</span>
             <div class="bismillah-line"></div>
         </div>
     </section>
@@ -788,10 +799,20 @@
         <h2>Learn Quran Online from Home</h2>
         <p>Qualified Teachers • 3 Days Free Trial • No Registration Fee • 50% Discount</p>
         <a href="https://wa.me/923181032854" class="btn btn-secondary">
-            <span style="position: relative; z-index: 1;"><span class="emoji">??</span> WhatsApp Now</span>
+            <span style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                WhatsApp Now
+            </span>
         </a>
         <a href="mailto:hafizhuzaifaansari8@gmail.com" class="btn btn-primary">
-            <span style="position: relative; z-index: 1;"><span class="emoji">??</span> Email Us</span>
+            <span style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                </svg>
+                Email Us
+            </span>
         </a>
     </section>
 
@@ -799,27 +820,61 @@
         <h3>Why Choose Us</h3>
         <div class="grid">
             <div class="card">
-                <h4><span class="emoji">??</span> Qualified Teachers</h4>
+                <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, var(--teal), var(--mint)); border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(90, 155, 143, 0.3);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h4>Qualified Teachers</h4>
                 <p>Learn from certified Islamic scholars with Ijazah and years of teaching experience in Quranic studies.</p>
             </div>
             <div class="card">
-                <h4><span class="emoji">??</span> Learn from Home</h4>
+                <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, var(--navy), var(--teal)); border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" fill="white"/>
+                    </svg>
+                </div>
+                <h4>Learn from Home</h4>
                 <p>Convenient online classes that fit your schedule. No commute, just quality education from your home.</p>
             </div>
             <div class="card">
-                <h4><span class="emoji">??</span> Affordable Pricing</h4>
+                <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, #d4af37, #f4d58d); border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="white"/>
+                        <circle cx="12" cy="12" r="8" stroke="white" stroke-width="2"/>
+                        <path d="M12 8V12M12 14H12.01" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h4>Affordable Pricing</h4>
                 <p>Quality education at reasonable rates with 50% discount for new students. No hidden costs or registration fees.</p>
             </div>
             <div class="card">
-                <h4><span class="emoji">??</span> Structured Curriculum</h4>
+                <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, var(--teal), var(--mint)); border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(90, 155, 143, 0.3);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2"/>
+                        <path d="M3 9H21M9 3V21" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h4>Structured Curriculum</h4>
                 <p>Step-by-step learning path from basics to advanced levels with clear milestones and progress tracking.</p>
             </div>
             <div class="card">
-                <h4><span class="emoji">?</span> Flexible Timing</h4>
+                <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, var(--navy), var(--teal)); border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2"/>
+                        <path d="M12 6V12L16 14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h4>Flexible Timing</h4>
                 <p>Choose class times that work best for you. Morning, afternoon, evening, or night slots available.</p>
             </div>
             <div class="card">
-                <h4><span class="emoji">??</span> Special Offer</h4>
+                <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, #d4af37, #f4d58d); border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6H16V4C16 2.89 15.11 2 14 2H10C8.89 2 8 2.89 8 4V6H4C2.89 6 2.01 6.89 2.01 8L2 19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V8C22 6.89 21.11 6 20 6ZM10 4H14V6H10V4Z" fill="white"/>
+                    </svg>
+                </div>
+                <h4>Special Offer</h4>
                 <p>Get 50% discount on your first month as a new student. 3 days free trial with no obligation!</p>
             </div>
         </div>
@@ -834,7 +889,13 @@
             <div class="course-card">
                 <div class="course-header">
                     <span class="course-level">Beginner</span>
-                    <h4 class="course-title"><span class="emoji">??</span> Qaida</h4>
+                    <h4 class="course-title" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                            <path d="M18 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V4C20 2.9 19.1 2 18 2Z"/>
+                            <path d="M7 6H17M7 10H17M7 14H13" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                        </svg>
+                        Qaida
+                    </h4>
                     <p>Foundation Course</p>
                 </div>
                 <div class="course-body">
@@ -850,7 +911,13 @@
             <div class="course-card">
                 <div class="course-header">
                     <span class="course-level">Intermediate</span>
-                    <h4 class="course-title"><span class="emoji">??</span> Quran with Tajweed</h4>
+                    <h4 class="course-title" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                            <path d="M18 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V4C20 2.9 19.1 2 18 2Z"/>
+                            <circle cx="12" cy="12" r="3" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+                        </svg>
+                        Quran with Tajweed
+                    </h4>
                     <p>Advanced Recitation</p>
                 </div>
                 <div class="course-body">
@@ -866,7 +933,13 @@
             <div class="course-card">
                 <div class="course-header">
                     <span class="course-level">Advanced</span>
-                    <h4 class="course-title"><span class="emoji">??</span> Quran with Translation</h4>
+                    <h4 class="course-title" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                            <path d="M18 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V4C20 2.9 19.1 2 18 2Z" opacity="0.8"/>
+                            <path d="M8 8H16M8 12H16M8 16H13" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Quran with Translation
+                    </h4>
                     <p>Understanding the Message</p>
                 </div>
                 <div class="course-body">
@@ -882,13 +955,20 @@
             <div class="course-card">
                 <div class="course-header" style="background: linear-gradient(135deg, var(--navy), var(--teal));">
                     <span class="course-level">Ultra-Advanced</span>
-                    <h4 class="course-title"><span class="emoji">??</span> Hadith Studies</h4>
-                    <p>??? ??????</p>
+                    <h4 class="course-title" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                            <rect x="3" y="4" width="18" height="16" rx="2" stroke="white" stroke-width="2" fill="none"/>
+                            <path d="M3 8H21M8 4V8M16 4V8" stroke="white" stroke-width="2"/>
+                            <circle cx="12" cy="14" r="2" fill="white"/>
+                        </svg>
+                        Hadith Studies
+                    </h4>
+                    <p>علم الحديث</p>
                 </div>
                 <div class="course-body">
                     <p style="color: #64748b; margin-bottom: 1rem;">Advanced Hadith studies including methodology, classification, and application in Islamic jurisprudence.</p>
                     <ul class="course-features">
-                        <li>Hadith methodology (????? ??????)</li>
+                        <li>Hadith methodology (مصطلح الحديث)</li>
                         <li>Authentication & classification</li>
                         <li>Major Hadith collections</li>
                         <li>Duration: 6 months / 3 sessions per week</li>
@@ -898,14 +978,20 @@
             <div class="course-card">
                 <div class="course-header" style="background: linear-gradient(135deg, var(--teal), var(--mint));">
                     <span class="course-level">Ultra-Advanced</span>
-                    <h4 class="course-title"><span class="emoji">??</span> Arabic Grammar</h4>
-                    <p>????? ??????</p>
+                    <h4 class="course-title" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                            <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z"/>
+                            <path d="M14 2V8H20M8 13H16M8 17H16M8 9H13" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+                        </svg>
+                        Arabic Grammar
+                    </h4>
+                    <p>النحو والصرف</p>
                 </div>
                 <div class="course-body">
                     <p style="color: #64748b; margin-bottom: 1rem;">Intensive Arabic grammar course for Quranic and Hadith understanding, covering syntax and morphology.</p>
                     <ul class="course-features">
-                        <li>Advanced syntax (?????)</li>
-                        <li>Morphology (?????)</li>
+                        <li>Advanced syntax (النحو)</li>
+                        <li>Morphology (الصرف)</li>
                         <li>Quranic Arabic patterns</li>
                         <li>Duration: 6 months / 3 sessions per week</li>
                     </ul>
@@ -919,7 +1005,12 @@
     <!-- ============================================ -->
     <section class="section" id="plans" style="background: linear-gradient(135deg, #f0f7f6 0%, white 100%); padding: 5rem 2rem; border-top: 5px solid var(--teal);">
         <div style="text-align: center; margin-bottom: 3rem;">
-            <div style="display: inline-block; background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;"><span class="emoji">??</span> SPECIAL OFFERS</div>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                SPECIAL OFFERS
+            </div>
             <h3 style="font-size: 2.8rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--navy), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Our Offer Plans</h3>
             <p style="color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Choose the perfect plan for your Quranic learning journey with exclusive free courses included!</p>
         </div>
@@ -943,10 +1034,15 @@
                 </div>
 
                 <div style="background: rgba(90, 155, 143, 0.05); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--teal);">
-                    <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700;"><span class="emoji">?</span> Free Course Included:</h5>
+                    <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="var(--teal)"/>
+                        </svg>
+                        Free Course Included:
+                    </h5>
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <li style="padding: 0.5rem 0; color: #475569; display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--teal); font-weight: 700;">?</span>
+                            <span style="color: var(--teal); font-weight: 700;">✓</span>
                             Seerat-un-Nabi (Basic Level)
                         </li>
                     </ul>
@@ -961,7 +1057,12 @@
 
             <!-- STANDARD PLAN - MOST POPULAR -->
             <div class="card plan-card" style="background: linear-gradient(135deg, var(--navy), var(--teal)); color: white; border-radius: 20px; padding: 2.5rem; border: none; position: relative; overflow: hidden; transform: scale(1.05); box-shadow: 0 15px 50px rgba(30, 58, 95, 0.4);">
-                <div style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark); padding: 0.4rem 1rem; border-radius: 50px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);">? Most Popular</div>
+                <div style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark); padding: 0.4rem 1rem; border-radius: 50px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); display: flex; align-items: center; gap: 0.3rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    Most Popular
+                </div>
                 
                 <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(143, 204, 187, 0.2) 0%, transparent 70%); border-radius: 50%;"></div>
                 
@@ -978,14 +1079,19 @@
                 </div>
 
                 <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--mint); border: 2px solid rgba(255,255,255,0.2);">
-                    <h5 style="color: white; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700;"><span class="emoji">?</span> Free Courses Included:</h5>
+                    <h5 style="color: white; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white"/>
+                        </svg>
+                        Free Courses Included:
+                    </h5>
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <li style="padding: 0.5rem 0; color: rgba(255,255,255,0.95); display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--mint); font-weight: 700;">?</span>
+                            <span style="color: var(--mint); font-weight: 700;">✓</span>
                             Seerat-un-Nabi (Basic Level)
                         </li>
                         <li style="padding: 0.5rem 0; color: rgba(255,255,255,0.95); display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: var(--mint); font-weight: 700;">?</span>
+                            <span style="color: var(--mint); font-weight: 700;">✓</span>
                             Seerat-un-Nabi (Beginner Level)
                         </li>
                     </ul>
@@ -1014,18 +1120,23 @@
                 </div>
 
                 <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(244, 213, 141, 0.08)); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid #d4af37; border: 2px solid rgba(212, 175, 55, 0.2);">
-                    <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700;"><span class="emoji">?</span> Free Courses Included:</h5>
+                    <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#d4af37"/>
+                        </svg>
+                        Free Courses Included:
+                    </h5>
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <li style="padding: 0.5rem 0; color: #475569; display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #d4af37; font-weight: 700;">?</span>
+                            <span style="color: #d4af37; font-weight: 700;">✓</span>
                             Seerat-un-Nabi (Basic Level)
                         </li>
                         <li style="padding: 0.5rem 0; color: #475569; display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #d4af37; font-weight: 700;">?</span>
+                            <span style="color: #d4af37; font-weight: 700;">✓</span>
                             Seerat-un-Nabi (Beginner Level)
                         </li>
                         <li style="padding: 0.5rem 0; color: #475569; display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #d4af37; font-weight: 700;">?</span>
+                            <span style="color: #d4af37; font-weight: 700;">✓</span>
                             Seerat-un-Nabi (Advanced Level)
                         </li>
                     </ul>
@@ -1041,20 +1152,42 @@
 
         <!-- Benefits Comparison -->
         <div style="max-width: 900px; margin: 4rem auto 0; padding: 2.5rem; background: white; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top: 4px solid var(--teal);">
-            <h4 style="text-align: center; color: var(--navy); font-size: 1.6rem; margin-bottom: 2rem; font-weight: 800;"><span class="emoji">??</span> Why Choose Our Plans?</h4>
+            <h4 style="text-align: center; color: var(--navy); font-size: 1.6rem; margin-bottom: 2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 6H16V4C16 2.89 15.11 2 14 2H10C8.89 2 8 2.89 8 4V6H4C2.89 6 2.01 6.89 2.01 8L2 19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V8C22 6.89 21.11 6 20 6ZM10 4H14V6H10V4Z" fill="var(--navy)"/>
+                </svg>
+                Why Choose Our Plans?
+            </h4>
             <div class="grid grid-3" style="gap: 2rem;">
                 <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;"><span class="emoji">??</span></div>
+                    <div style="width: 70px; height: 70px; margin: 0 auto 1rem; background: linear-gradient(135deg, #d4af37, #f4d58d); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="white" opacity="0.3"/>
+                            <path d="M12 6V12L16 14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M7 10L9 12L13 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;">Best Value</h5>
                     <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Get free premium courses worth thousands included in every plan</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;"><span class="emoji">?</span></div>
+                    <div style="width: 70px; height: 70px; margin: 0 auto 1rem; background: linear-gradient(135deg, var(--teal), var(--mint)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(90, 155, 143, 0.3);">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2"/>
+                            <path d="M12 6V12L16 14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;">Flexible Schedule</h5>
                     <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Choose the frequency that fits your lifestyle and commitment level</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;"><span class="emoji">??</span></div>
+                    <div style="width: 70px; height: 70px; margin: 0 auto 1rem; background: linear-gradient(135deg, var(--navy), var(--teal)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6H2V20C2 21.1 2.9 22 4 22H18V20H4V6Z" fill="white"/>
+                            <path d="M20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H8V4H20V16Z" fill="white"/>
+                            <path d="M10 9H18V11H10V9ZM10 12H14V14H10V12ZM10 6H18V8H10V6Z" fill="white"/>
+                        </svg>
+                    </div>
                     <h5 style="color: var(--navy); font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;">Complete Package</h5>
                     <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Learn Quran AND gain deep knowledge of Prophet's blessed life</p>
                 </div>
@@ -1068,7 +1201,7 @@
     <section class="section" id="stats" style="background: linear-gradient(180deg, #f8fafc 0%, white 100%); padding: 5rem 2rem; border-top: 5px solid var(--teal);">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge" style="background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark);">? OUR ACHIEVEMENTS</div>
+                <div class="section-badge" style="background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark);">✨ OUR ACHIEVEMENTS</div>
                 <h2 class="section-title" style="font-size: 3rem;">Trusted by Students Worldwide</h2>
                 <p class="section-description" style="font-size: 1.15rem;">Join thousands of students who have transformed their lives through Quranic education. See why we're the most trusted online Quran teaching platform!</p>
             </div>
@@ -1076,22 +1209,44 @@
             <!-- Impressive Global Stats -->
             <div class="grid grid-3" style="margin-bottom: 4rem;">
                 <div class="card" style="background: linear-gradient(135deg, #1e3a5f, #2d5a7b); color: white; border-top: none; text-align: center; padding: 3.5rem 2rem; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; opacity: 0.1;">??</div>
-                    <div style="font-size: 4rem; margin-bottom: 1rem; position: relative; z-index: 1;">??</div>
+                    <div style="position: absolute; top: -20px; right: -20px; opacity: 0.1;">
+                        <svg width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="white"/>
+                        </svg>
+                    </div>
+                    <div style="font-size: 4rem; margin-bottom: 1rem; position: relative; z-index: 1;">🌍</div>
                     <p style="font-size: 4rem; font-weight: 800; color: white; margin: 0; line-height: 1;">500+</p>
                     <h4 style="color: var(--mint); font-size: 1.3rem; margin-top: 0.5rem; font-weight: 700;">Students Worldwide</h4>
                     <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-top: 0.5rem;">Learning from 25+ countries including UK, USA, Canada, UAE & Pakistan</p>
                 </div>
                 <div class="card" style="background: linear-gradient(135deg, #5a9b8f, #8fccbb); color: white; border-top: none; text-align: center; padding: 3.5rem 2rem; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; opacity: 0.1;">??</div>
-                    <div style="font-size: 4rem; margin-bottom: 1rem; position: relative; z-index: 1;">??</div>
+                    <div style="position: absolute; top: -20px; right: -20px; opacity: 0.1;">
+                        <svg width="120" height="120" viewBox="0 0 24 24" fill="white">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="white" stroke-width="2"/>
+                        <path d="M8 7h8M8 11h8M8 15h5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
                     <p style="font-size: 4rem; font-weight: 800; color: white; margin: 0; line-height: 1;">1000+</p>
                     <h4 style="color: white; font-size: 1.3rem; margin-top: 0.5rem; font-weight: 700;">Qurans Completed</h4>
                     <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-top: 0.5rem;">With perfect Tajweed and beautiful recitation</p>
                 </div>
                 <div class="card" style="background: linear-gradient(135deg, #d4af37, #f4d58d); color: var(--dark); border-top: none; text-align: center; padding: 3.5rem 2rem; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; opacity: 0.1;">?</div>
-                    <div style="font-size: 4rem; margin-bottom: 1rem; position: relative; z-index: 1;">?</div>
+                    <div style="position: absolute; top: -20px; right: -20px; opacity: 0.1;">
+                        <svg width="120" height="120" viewBox="0 0 24 24" fill="#d4af37">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="var(--dark)" stroke="var(--dark)" stroke-width="1"/>
+                    </svg>
+                </div>
                     <p style="font-size: 4rem; font-weight: 800; color: var(--dark); margin: 0; line-height: 1;">98%</p>
                     <h4 style="color: var(--dark); font-size: 1.3rem; margin-top: 0.5rem; font-weight: 700;">Success Rate</h4>
                     <p style="color: rgba(0,0,0,0.7); font-size: 0.95rem; margin-top: 0.5rem;">Students achieve their Quranic learning goals</p>
@@ -1101,13 +1256,24 @@
             <!-- Most Popular Courses with Progress Bars -->
             <div style="background: white; border-radius: 24px; padding: 3.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.1); margin-bottom: 4rem; border: 2px solid rgba(90, 155, 143, 0.1);">
                 <div style="text-align: center; margin-bottom: 3rem;">
-                    <h3 style="color: var(--navy); font-size: 2.3rem; margin-bottom: 0.5rem;">?? Most Popular Courses</h3>
+                    <h3 style="color: var(--navy); font-size: 2.3rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--navy)">
+                            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                        </svg>
+                        Most Popular Courses
+                    </h3>
                     <p style="color: #64748b; font-size: 1.05rem;">See what our students are learning right now</p>
                 </div>
                 <div class="grid grid-2" style="gap: 2.5rem;">
                     <div style="padding: 1.5rem; background: rgba(90, 155, 143, 0.03); border-radius: 12px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem;">?? Quran with Tajweed</span>
+                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--teal)">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                    <path d="M8 7h8M8 11h8M8 15h5" stroke="white" stroke-width="1"/>
+                                </svg>
+                                Quran with Tajweed
+                            </span>
                             <span style="font-weight: 800; color: var(--teal); font-size: 1.1rem;">245 Students</span>
                         </div>
                         <div style="background: #e2e8f0; height: 14px; border-radius: 10px; overflow: hidden; position: relative;">
@@ -1117,7 +1283,12 @@
                     </div>
                     <div style="padding: 1.5rem; background: rgba(90, 155, 143, 0.03); border-radius: 12px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem;">?? Qaida (Beginner)</span>
+                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--teal)">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                </svg>
+                                Qaida (Beginner)
+                            </span>
                             <span style="font-weight: 800; color: var(--teal); font-size: 1.1rem;">189 Students</span>
                         </div>
                         <div style="background: #e2e8f0; height: 14px; border-radius: 10px; overflow: hidden;">
@@ -1127,7 +1298,13 @@
                     </div>
                     <div style="padding: 1.5rem; background: rgba(90, 155, 143, 0.03); border-radius: 12px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem;">?? Quran with Translation</span>
+                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--teal)">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                    <path d="M10 8h6M10 12h6M10 16h4" stroke="white" stroke-width="1"/>
+                                </svg>
+                                Quran with Translation
+                            </span>
                             <span style="font-weight: 800; color: var(--teal); font-size: 1.1rem;">156 Students</span>
                         </div>
                         <div style="background: #e2e8f0; height: 14px; border-radius: 10px; overflow: hidden;">
@@ -1137,7 +1314,12 @@
                     </div>
                     <div style="padding: 1.5rem; background: rgba(212, 175, 55, 0.05); border-radius: 12px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem;">?? Hadith Studies</span>
+                            <span style="font-weight: 700; color: var(--navy); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#d4af37">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                                </svg>
+                                Hadith Studies
+                            </span>
                             <span style="font-weight: 800; color: #d4af37; font-size: 1.1rem;">67 Students</span>
                         </div>
                         <div style="background: #e2e8f0; height: 14px; border-radius: 10px; overflow: hidden;">
@@ -1151,17 +1333,33 @@
             <!-- Trust Badges -->
             <div class="grid grid-3" style="margin-bottom: 4rem;">
                 <div class="card" style="text-align: center; padding: 2.5rem; border: 2px solid rgba(90, 155, 143, 0.2);">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">??</div>
+                    <div style="margin-bottom: 1rem;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="var(--teal)"/>
+                            <circle cx="12" cy="12" r="10" stroke="var(--teal)" stroke-width="2"/>
+                        </svg>
+                    </div>
                     <h4 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 0.7rem; font-weight: 700;">Excellence Award</h4>
                     <p style="color: #64748b; font-size: 1rem; line-height: 1.6;">Recognized as top-rated online Quran teaching platform</p>
                 </div>
                 <div class="card" style="text-align: center; padding: 2.5rem; border: 2px solid rgba(90, 155, 143, 0.2);">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">??</div>
+                    <div style="margin-bottom: 1rem;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="var(--teal)"/>
+                            <path d="M9 11l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <h4 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 0.7rem; font-weight: 700;">Certified Teachers</h4>
                     <p style="color: #64748b; font-size: 1rem; line-height: 1.6;">All instructors hold authentic Ijazah certificates</p>
                 </div>
                 <div class="card" style="text-align: center; padding: 2.5rem; border: 2px solid rgba(90, 155, 143, 0.2);">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">??</div>
+                    <div style="margin-bottom: 1rem;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="4" width="16" height="16" rx="2" fill="var(--teal)"/>
+                            <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 2v4M16 2v4M4 8h16" stroke="var(--navy)" stroke-width="2"/>
+                        </svg>
+                    </div>
                     <h4 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 0.7rem; font-weight: 700;">100% Online</h4>
                     <p style="color: #64748b; font-size: 1rem; line-height: 1.6;">Learn from anywhere with flexible scheduling</p>
                 </div>
@@ -1169,25 +1367,46 @@
 
             <!-- Student Success Gallery -->
             <div style="background: linear-gradient(135deg, var(--navy), var(--teal)); border-radius: 24px; padding: 4rem 3rem; color: white; text-align: center; box-shadow: 0 12px 40px rgba(30, 58, 95, 0.3);">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">??</div>
+                <div style="margin-bottom: 1rem;">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" fill="white"/>
+                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke="white" stroke-width="2"/>
+                        <path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
                 <h3 style="color: white; font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 800;">Real Student Success Stories</h3>
                 <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; margin-bottom: 3rem; max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.7;">Every month, dozens of students complete their Quran journey with us. Their success is our pride. Join them and make your family proud!</p>
                 
                 <div class="grid grid-3" style="margin-top: 2.5rem;">
                     <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 20px; border: 2px solid rgba(255,255,255,0.2); transition: transform 0.3s ease;">
-                        <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">??</div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <svg width="55" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="5" fill="white"/>
+                                <path d="M3 21c0-4 4-7 9-7s9 3 9 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h4 style="color: white; margin-bottom: 0.7rem; font-size: 1.3rem; font-weight: 700;">Ahmed Khan</h4>
                         <p style="color: var(--mint); font-size: 0.9rem; margin-bottom: 0.7rem; font-weight: 600;">Age 10 • Pakistan</p>
                         <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6;">"Completed entire Quran with Tajweed in just 8 months! My teacher was so patient and helpful."</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 20px; border: 2px solid rgba(255,255,255,0.2);">
-                        <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">??</div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <svg width="55" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="5" fill="white"/>
+                                <path d="M3 21c0-4 4-7 9-7s9 3 9 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h4 style="color: white; margin-bottom: 0.7rem; font-size: 1.3rem; font-weight: 700;">Fatima Ali</h4>
                         <p style="color: var(--mint); font-size: 0.9rem; margin-bottom: 0.7rem; font-weight: 600;">Age 12 • London, UK</p>
                         <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6;">"Memorized 5 beautiful Surahs with perfect Tajweed. Best online Quran platform!"</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 20px; border: 2px solid rgba(255,255,255,0.2);">
-                        <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">??</div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <svg width="55" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="5" fill="white"/>
+                                <path d="M3 21c0-4 4-7 9-7s9 3 9 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h4 style="color: white; margin-bottom: 0.7rem; font-size: 1.3rem; font-weight: 700;">Usman Hassan</h4>
                         <p style="color: var(--mint); font-size: 0.9rem; margin-bottom: 0.7rem; font-weight: 600;">Age 25 • Dubai, UAE</p>
                         <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6;">"Mastered Arabic Grammar and now understand Quran deeply. Life-changing experience!"</p>
@@ -1197,11 +1416,20 @@
 
             <!-- Final CTA -->
             <div style="text-align: center; margin-top: 4rem; padding: 3.5rem; background: linear-gradient(135deg, rgba(90, 155, 143, 0.08), rgba(143, 204, 187, 0.08)); border-radius: 24px; border: 3px dashed var(--teal);">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">??</div>
+                <div style="margin-bottom: 1rem;">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z" fill="var(--teal)" stroke="var(--teal)" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                </div>
                 <h3 style="color: var(--navy); font-size: 2.5rem; margin-bottom: 1.2rem; font-weight: 800;">Ready to Join 500+ Successful Students?</h3>
                 <p style="color: #64748b; font-size: 1.15rem; margin-bottom: 2.5rem; line-height: 1.7; max-width: 650px; margin-left: auto; margin-right: auto;">Start your blessed Quranic journey today with a <strong>3-day FREE trial</strong>. No payment required. No commitment. Just pure learning!</p>
                 <a href="#contact" class="btn btn-primary btn-lg" style="display: inline-flex; align-items: center; gap: 0.7rem; font-size: 1.1rem; padding: 1.2rem 2.5rem;">
-                    <span style="position: relative; z-index: 1;">? Start Your Free Trial Now</span>
+                    <span style="position: relative; z-index: 1; display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        Start Your Free Trial Now
+                    </span>
                 </a>
             </div>
         </div>
@@ -1212,16 +1440,105 @@
     <!-- ============================================ -->
     <section class="section" id="reviews" style="background: linear-gradient(180deg, white 0%, #f8fafc 100%); border-top: 5px solid var(--teal); padding: 5rem 2rem;">
         <div style="text-align: center; margin-bottom: 3rem;">
-            <div style="display: inline-block; background: linear-gradient(135deg, var(--teal), var(--mint)); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">? STUDENT REVIEWS</div>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--teal), var(--mint)); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                STUDENT REVIEWS
+            </div>
             <h3 style="font-size: 2.8rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--navy), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">What Our Students Say</h3>
             <p style="color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Real feedback from students and parents around the world</p>
         </div>
-        <div class="grid">
+
+        <!-- ADD YOUR REVIEW SECTION -->
+        <div style="background: linear-gradient(135deg, var(--navy), var(--teal)); border-radius: 24px; padding: 3rem 2rem; margin-bottom: 4rem; box-shadow: 0 12px 40px rgba(30, 58, 95, 0.3); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(143, 204, 187, 0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+            
+            <div style="text-align: center; margin-bottom: 2rem; position: relative; z-index: 1;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 50%; margin-bottom: 1rem; border: 3px solid rgba(255,255,255,0.3);">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
+                    </svg>
+                </div>
+                <h3 style="color: white; font-size: 2rem; margin-bottom: 0.5rem; font-weight: 800;">Share Your Experience!</h3>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem;">Help others by sharing your learning journey with us</p>
+            </div>
+
+            <div style="background: white; border-radius: 20px; padding: 2.5rem; max-width: 700px; margin: 0 auto; position: relative; z-index: 1; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label style="color: var(--navy); font-weight: 600; margin-bottom: 0.5rem; display: block;">Your Name *</label>
+                        <input type="text" id="reviewName" required placeholder="Enter your name" style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease;">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: var(--navy); font-weight: 600; margin-bottom: 0.5rem; display: block;">Your Location *</label>
+                        <input type="text" id="reviewLocation" required placeholder="City, Country" style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease;">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: var(--navy); font-weight: 600; margin-bottom: 0.5rem; display: block;">Rating *</label>
+                        <div style="display: flex; gap: 0.5rem; font-size: 2rem;">
+                            <span class="star-rating" data-rating="1" style="cursor: pointer; transition: all 0.3s ease;">⭐</span>
+                            <span class="star-rating" data-rating="2" style="cursor: pointer; transition: all 0.3s ease;">⭐</span>
+                            <span class="star-rating" data-rating="3" style="cursor: pointer; transition: all 0.3s ease;">⭐</span>
+                            <span class="star-rating" data-rating="4" style="cursor: pointer; transition: all 0.3s ease;">⭐</span>
+                            <span class="star-rating" data-rating="5" style="cursor: pointer; transition: all 0.3s ease;">⭐</span>
+                        </div>
+                        <input type="hidden" id="reviewRating" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="color: var(--navy); font-weight: 600; margin-bottom: 0.5rem; display: block;">Your Review *</label>
+                        <textarea id="reviewText" required placeholder="Share your experience with our Quran teaching service..." rows="5" style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; resize: vertical; transition: all 0.3s ease; font-family: inherit;"></textarea>
+                    </div>
+                    <button type="button" id="submitReviewBtn" class="btn btn-primary" style="width: 100%; margin-top: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <span style="position: relative; z-index: 1; display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                            Submit Review
+                        </span>
+                    </button>
+                </form>
+                <div id="reviewSuccess" style="display: none; background: linear-gradient(135deg, var(--teal), var(--mint)); color: white; padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; text-align: center; animation: slideIn 0.5s ease;">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="white" style="margin-bottom: 0.5rem;">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    <h4 style="margin: 0.5rem 0; font-size: 1.3rem;">Thank You! 🎉</h4>
+                    <p style="margin: 0; font-size: 1rem;">Your review has been submitted successfully!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXISTING REVIEWS -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h4 style="color: var(--navy); font-size: 1.8rem; font-weight: 700;">Recent Reviews</h4>
+        </div>
+        <div class="grid" id="reviewsContainer">
             <div class="testimonial-card">
-                <div class="rating">?????</div>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
                 <p class="testimonial-text">"My daughter has been learning Quran for 6 months now. Her Tajweed has improved tremendously and she looks forward to every class. The teacher is very patient and knowledgeable. Highly recommended!"</p>
                 <div class="author">
-                    <div class="avatar">??</div>
+                    <div class="avatar" style="background: linear-gradient(135deg, var(--navy), var(--teal));">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20C4 16 7 14 12 14C17 14 20 16 20 20"/>
+                        </svg>
+                    </div>
                     <div>
                         <div class="author-name">Fatima Ahmed</div>
                         <div class="author-location">Karachi, Pakistan</div>
@@ -1229,10 +1546,31 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <div class="rating">?????</div>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
                 <p class="testimonial-text">"Living in the UK, it was challenging to find authentic Quran teachers. This online platform has been a blessing. The timing flexibility works perfectly with our schedule!"</p>
                 <div class="author">
-                    <div class="avatar">??</div>
+                    <div class="avatar" style="background: linear-gradient(135deg, var(--teal), var(--mint));">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20C4 16 7 14 12 14C17 14 20 16 20 20"/>
+                        </svg>
+                    </div>
                     <div>
                         <div class="author-name">Irfan Mahmood</div>
                         <div class="author-location">London, UK</div>
@@ -1240,10 +1578,31 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <div class="rating">?????</div>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
                 <p class="testimonial-text">"Excellent teaching methodology! My son started from zero and now he can read Quran fluently. The teacher uses interactive methods that keep children engaged. Worth every penny!"</p>
                 <div class="author">
-                    <div class="avatar">??</div>
+                    <div class="avatar" style="background: linear-gradient(135deg, var(--navy), var(--teal));">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20C4 16 7 14 12 14C17 14 20 16 20 20"/>
+                        </svg>
+                    </div>
                     <div>
                         <div class="author-name">Ayesha Malik</div>
                         <div class="author-location">Islamabad, Pakistan</div>
@@ -1251,10 +1610,31 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <div class="rating">?????</div>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
                 <p class="testimonial-text">"As a busy professional in Dubai, finding time for Quran learning was difficult. The flexible evening slots work perfectly for me. I've completed Qaida and now learning Tajweed. Alhamdulillah!"</p>
                 <div class="author">
-                    <div class="avatar">??</div>
+                    <div class="avatar" style="background: linear-gradient(135deg, var(--teal), var(--mint));">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20C4 16 7 14 12 14C17 14 20 16 20 20"/>
+                        </svg>
+                    </div>
                     <div>
                         <div class="author-name">Omar Abdullah</div>
                         <div class="author-location">Dubai, UAE</div>
@@ -1262,10 +1642,31 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <div class="rating">?????</div>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
                 <p class="testimonial-text">"We moved to Canada last year and were worried about our kids' Islamic education. Found this service online and it's been amazing! Professional, punctual, and excellent teaching quality."</p>
                 <div class="author">
-                    <div class="avatar">??</div>
+                    <div class="avatar" style="background: linear-gradient(135deg, var(--navy), var(--teal));">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20C4 16 7 14 12 14C17 14 20 16 20 20"/>
+                        </svg>
+                    </div>
                     <div>
                         <div class="author-name">Sarah Khan</div>
                         <div class="author-location">Toronto, Canada</div>
@@ -1273,10 +1674,31 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <div class="rating">?????</div>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 2px;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFA500" xmlns="http://www.w3.org/2000/svg" style="display: inline-block;">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
                 <p class="testimonial-text">"I wanted to learn Quran with proper Tajweed. The time difference was managed perfectly and my teacher is always on time. Now I can recite beautifully MashaAllah. JazakAllah!"</p>
                 <div class="author">
-                    <div class="avatar">??</div>
+                    <div class="avatar" style="background: linear-gradient(135deg, var(--teal), var(--mint));">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20C4 16 7 14 12 14C17 14 20 16 20 20"/>
+                        </svg>
+                    </div>
                     <div>
                         <div class="author-name">Ibrahim Ali</div>
                         <div class="author-location">New York, USA</div>
@@ -1315,28 +1737,28 @@
                     <label>Country *</label>
                     <select id="country" name="country" required>
                         <option value="">Select your country...</option>
-                        <option value="Pakistan">???? Pakistan</option>
-                        <option value="United Kingdom">???? United Kingdom</option>
-                        <option value="United States">???? United States</option>
-                        <option value="Canada">???? Canada</option>
-                        <option value="United Arab Emirates">???? United Arab Emirates</option>
-                        <option value="Saudi Arabia">???? Saudi Arabia</option>
-                        <option value="Qatar">???? Qatar</option>
-                        <option value="Kuwait">???? Kuwait</option>
-                        <option value="Bahrain">???? Bahrain</option>
-                        <option value="Oman">???? Oman</option>
-                        <option value="Malaysia">???? Malaysia</option>
-                        <option value="Indonesia">???? Indonesia</option>
-                        <option value="Turkey">???? Turkey</option>
-                        <option value="Egypt">???? Egypt</option>
-                        <option value="Australia">???? Australia</option>
-                        <option value="South Africa">???? South Africa</option>
-                        <option value="Germany">???? Germany</option>
-                        <option value="France">???? France</option>
-                        <option value="Netherlands">???? Netherlands</option>
-                        <option value="India">???? India</option>
-                        <option value="Bangladesh">???? Bangladesh</option>
-                        <option value="Other">?? Other</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="Canada">Canada</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="Australia">Australia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Germany">Germany</option>
+                        <option value="France">France</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="India">India</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -1347,34 +1769,34 @@
                     <label>Preferred Currency *</label>
                     <select id="currency" name="currency" required>
                         <option value="">Select currency...</option>
-                        <option value="PKR">???? PKR - Pakistani Rupee</option>
-                        <option value="USD">???? USD - US Dollar</option>
-                        <option value="GBP">???? GBP - British Pound</option>
-                        <option value="EUR">???? EUR - Euro</option>
-                        <option value="AED">???? AED - UAE Dirham</option>
-                        <option value="SAR">???? SAR - Saudi Riyal</option>
-                        <option value="CAD">???? CAD - Canadian Dollar</option>
-                        <option value="AUD">???? AUD - Australian Dollar</option>
-                        <option value="MYR">???? MYR - Malaysian Ringgit</option>
-                        <option value="QAR">???? QAR - Qatari Riyal</option>
-                        <option value="KWD">???? KWD - Kuwaiti Dinar</option>
-                        <option value="Other">?? Other</option>
+                        <option value="PKR">PKR - Pakistani Rupee</option>
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="AED">AED - UAE Dirham</option>
+                        <option value="SAR">SAR - Saudi Riyal</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="MYR">MYR - Malaysian Ringgit</option>
+                        <option value="QAR">QAR - Qatari Riyal</option>
+                        <option value="KWD">KWD - Kuwaiti Dinar</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Select Plan *</label>
                     <select id="plan" name="plan" required>
                         <option value="">Choose your plan...</option>
-                        <option value="Basic Plan (3 Days/Week)">?? Basic Plan (3 Days/Week)</option>
-                        <option value="Standard Plan (4 Days/Week)">?? Standard Plan (4 Days/Week) - Most Popular</option>
-                        <option value="Premium Plan (5 Days/Week)">?? Premium Plan (5 Days/Week)</option>
+                        <option value="Basic Plan (3 Days/Week)">Basic Plan (3 Days/Week)</option>
+                        <option value="Standard Plan (4 Days/Week)">Standard Plan (4 Days/Week) - Most Popular</option>
+                        <option value="Premium Plan (5 Days/Week)">Premium Plan (5 Days/Week)</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Select Course *</label>
                     <select id="course" name="course" required>
                         <option value="">Choose a course...</option>
-                        <optgroup label="?? Quranic Studies">
+                        <optgroup label="📚 Quranic Studies">
                             <option>Qaida (Beginner)</option>
                             <option>Quran with Tajweed</option>
                             <option>Quran with Translation</option>
@@ -1382,9 +1804,9 @@
                             <option>Basic Qaida (Kids)</option>
                             <option>Basic Quran Reading (Kids)</option>
                         </optgroup>
-                        <optgroup label="? Ultra-Advanced Studies">
-                            <option>Hadith Studies (??? ??????)</option>
-                            <option>Arabic Grammar (????? ??????)</option>
+                        <optgroup label="⭐ Ultra-Advanced Studies">
+                            <option>Hadith Studies (علم الحديث)</option>
+                            <option>Arabic Grammar (النحو والصرف)</option>
                         </optgroup>
                     </select>
                 </div>
@@ -1399,10 +1821,20 @@
                     </select>
                 </div>
                 <button type="button" id="submitBtn" onclick="handleSubmit(event)" class="btn btn-primary" style="width: 100%; margin-top: 1rem; cursor: pointer;">
-                    <span style="position: relative; z-index: 1;">?? Start My Free Trial Now</span>
+                    <span style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
+                        </svg>
+                        Start My Free Trial Now
+                    </span>
                 </button>
             </form>
-            <div id="successMsg" class="success">? Registration Successful! Redirecting to WhatsApp...</div>
+            <div id="successMsg" class="success" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Registration Successful! Redirecting to WhatsApp...
+            </div>
         </div>
     </section>
 
@@ -1461,10 +1893,251 @@
             <p><strong>Email:</strong> hafizhuzaifaansari8@gmail.com</p>
         </div>
         <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 1rem;">© 2024 Usman Ibne Affan. All rights reserved.</p>
-        <p style="font-style: italic; color: var(--mint); margin-top: 1rem;">"The best among you are those who learn the Quran and teach it." - Prophet Muhammad (?)</p>
+        <p style="font-style: italic; color: var(--mint); margin-top: 1rem;">"The best among you are those who learn the Quran and teach it." - Prophet Muhammad (ﷺ)</p>
     </footer>
 
     <script>
+        // INITIALIZE ON PAGE LOAD
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded!');
+            displayReviews();
+            setupStarRating();
+            setupReviewSubmit();
+        });
+        
+        // PERSISTENT STORAGE FOR REVIEWS
+        const STORAGE_KEY = 'quran_reviews';
+        
+        // Load reviews from storage
+        function loadReviews() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) {
+                    return JSON.parse(stored);
+                }
+            } catch (e) {
+                console.log('Storage error:', e);
+            }
+            return getDefaultReviews();
+        }
+        
+        // Save reviews to storage
+        function saveReviews(reviews) {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews));
+                console.log('Reviews saved!');
+            } catch (e) {
+                console.log('Save error:', e);
+            }
+        }
+        
+        // Default reviews
+        function getDefaultReviews() {
+            return [
+                {
+                    name: "Fatima Ahmed",
+                    location: "Karachi, Pakistan",
+                    rating: 5,
+                    text: "My daughter has been learning Quran for 6 months now. Her Tajweed has improved tremendously and she looks forward to every class. The teacher is very patient and knowledgeable. Highly recommended!"
+                },
+                {
+                    name: "Irfan Mahmood",
+                    location: "London, UK",
+                    rating: 5,
+                    text: "Living in the UK, it was challenging to find authentic Quran teachers. This online platform has been a blessing. The timing flexibility works perfectly with our schedule!"
+                },
+                {
+                    name: "Ayesha Malik",
+                    location: "Islamabad, Pakistan",
+                    rating: 5,
+                    text: "Excellent teaching methodology! My son started from zero and now he can read Quran fluently. The teacher uses interactive methods that keep children engaged. Worth every penny!"
+                }
+            ];
+        }
+        
+        // Display reviews
+        function displayReviews() {
+            console.log('Displaying reviews...');
+            const reviews = loadReviews();
+            const container = document.getElementById('reviewsContainer');
+            
+            if (!container) {
+                console.log('Container not found!');
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            reviews.forEach(review => {
+                const starHTML = '⭐'.repeat(review.rating);
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'testimonial-card';
+                reviewCard.innerHTML = `
+                    <div class="rating" style="color: #FFA500; font-size: 1.2rem; margin-bottom: 1rem;">
+                        ${starHTML}
+                    </div>
+                    <p class="testimonial-text" style="font-style: italic; color: #475569; margin-bottom: 1.5rem; line-height: 1.8;">"${review.text}"</p>
+                    <div class="author" style="display: flex; align-items: center; gap: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+                        <div class="avatar" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--teal)); display: flex; align-items: center; justify-content: center;">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 20C4 16 7 14 12 14C17 14 20 16 20 20"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="author-name" style="font-weight: 700; color: var(--navy);">${review.name}</div>
+                            <div class="author-location" style="font-size: 0.85rem; color: #64748b;">${review.location}</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(reviewCard);
+            });
+            
+            console.log('Reviews displayed:', reviews.length);
+        }
+        
+        // STAR RATING SETUP
+        function setupStarRating() {
+            let selectedRating = 0;
+            const stars = document.querySelectorAll('.star-rating');
+            
+            stars.forEach(star => {
+                // Initial state
+                star.style.filter = 'grayscale(100%)';
+                
+                star.addEventListener('click', function() {
+                    selectedRating = parseInt(this.getAttribute('data-rating'));
+                    document.getElementById('reviewRating').value = selectedRating;
+                    console.log('Rating selected:', selectedRating);
+                    
+                    // Update all stars
+                    stars.forEach((s, index) => {
+                        if (index < selectedRating) {
+                            s.style.filter = 'none';
+                            s.style.transform = 'scale(1.2)';
+                        } else {
+                            s.style.filter = 'grayscale(100%)';
+                            s.style.transform = 'scale(1)';
+                        }
+                    });
+                });
+                
+                star.addEventListener('mouseenter', function() {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    stars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.style.transform = 'scale(1.15)';
+                        }
+                    });
+                });
+                
+                star.addEventListener('mouseleave', function() {
+                    stars.forEach((s, index) => {
+                        if (index < selectedRating) {
+                            s.style.transform = 'scale(1.2)';
+                        } else {
+                            s.style.transform = 'scale(1)';
+                        }
+                    });
+                });
+            });
+        }
+        
+        // SETUP REVIEW SUBMIT BUTTON
+        function setupReviewSubmit() {
+            const submitBtn = document.getElementById('submitReviewBtn');
+            if (submitBtn) {
+                submitBtn.addEventListener('click', handleReviewSubmit);
+                console.log('Submit button connected!');
+            }
+        }
+        
+        // HANDLE REVIEW SUBMISSION
+        function handleReviewSubmit(event) {
+            event.preventDefault();
+            console.log('Submit clicked!');
+            
+            const name = document.getElementById('reviewName').value.trim();
+            const location = document.getElementById('reviewLocation').value.trim();
+            const rating = document.getElementById('reviewRating').value;
+            const reviewText = document.getElementById('reviewText').value.trim();
+            
+            console.log('Form values:', { name, location, rating, reviewText });
+            
+            // Validation
+            if (!name || !location || !rating || !reviewText) {
+                alert('❌ Please fill all fields and select a rating!');
+                return;
+            }
+            
+            if (reviewText.length < 20) {
+                alert('❌ Please write at least 20 characters in your review!');
+                return;
+            }
+            
+            console.log('Validation passed!');
+            
+            // Create new review
+            const newReview = {
+                name: name,
+                location: location,
+                rating: parseInt(rating),
+                text: reviewText
+            };
+            
+            // Add to storage
+            const reviews = loadReviews();
+            reviews.unshift(newReview);
+            saveReviews(reviews);
+            
+            console.log('Review added!');
+            
+            // Refresh display
+            displayReviews();
+            
+            // WhatsApp message
+            const message = 
+                '*NEW STUDENT REVIEW* ⭐%0A%0A' +
+                '━━━━━━━━━━━━━━━━━━━━━━%0A' +
+                '👤 *Name:* ' + encodeURIComponent(name) + '%0A' +
+                '📍 *Location:* ' + encodeURIComponent(location) + '%0A' +
+                '⭐ *Rating:* ' + rating + '/5 stars%0A%0A' +
+                '💬 *Review:*%0A' + encodeURIComponent(reviewText) + '%0A' +
+                '━━━━━━━━━━━━━━━━━━━━━━%0A%0A' +
+                '✨ Thank you for your feedback!';
+            
+            // Show success
+            document.getElementById('reviewForm').style.display = 'none';
+            document.getElementById('reviewSuccess').style.display = 'block';
+            
+            // Scroll to reviews
+            setTimeout(() => {
+                const container = document.getElementById('reviewsContainer');
+                if (container) {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 500);
+            
+            // Open WhatsApp
+            setTimeout(() => {
+                window.open('https://wa.me/923181032854?text=' + message, '_blank');
+            }, 1000);
+            
+            // Reset form
+            setTimeout(() => {
+                document.getElementById('reviewForm').reset();
+                document.getElementById('reviewForm').style.display = 'block';
+                document.getElementById('reviewSuccess').style.display = 'none';
+                
+                // Reset stars
+                const stars = document.querySelectorAll('.star-rating');
+                stars.forEach(s => {
+                    s.style.filter = 'grayscale(100%)';
+                    s.style.transform = 'scale(1)';
+                });
+            }, 6000);
+        }
+        
         // FORM SUBMISSION - SIMPLIFIED AND WORKING
         function handleSubmit(event) {
             event.preventDefault();
@@ -1495,23 +2168,23 @@
             // Create WhatsApp message
             const message = 
                 '*NEW STUDENT REGISTRATION*%0A%0A' +
-                '??????????????????????%0A' +
+                '━━━━━━━━━━━━━━━━━━━━━━%0A' +
                 'STUDENT DETAILS:%0A' +
-                '?? Name: ' + encodeURIComponent(studentName) + '%0A' +
-                '?? Age: ' + age + ' years%0A%0A' +
+                '👤 Name: ' + encodeURIComponent(studentName) + '%0A' +
+                '🎂 Age: ' + age + ' years%0A%0A' +
                 'PARENT/GUARDIAN:%0A' +
-                '???????? Name: ' + encodeURIComponent(parentName) + '%0A' +
-                '?? Contact: ' + whatsapp + '%0A%0A' +
+                '👨‍👩‍👧 Name: ' + encodeURIComponent(parentName) + '%0A' +
+                '📱 Contact: ' + whatsapp + '%0A%0A' +
                 'LOCATION:%0A' +
-                '?? Country: ' + encodeURIComponent(country) + '%0A' +
-                '??? City: ' + encodeURIComponent(city) + '%0A' +
-                '?? Currency: ' + currency + '%0A%0A' +
+                '🌍 Country: ' + encodeURIComponent(country) + '%0A' +
+                '🏙️ City: ' + encodeURIComponent(city) + '%0A' +
+                '💰 Currency: ' + currency + '%0A%0A' +
                 'SELECTED PLAN:%0A' +
-                '?? Plan: ' + encodeURIComponent(plan) + '%0A%0A' +
+                '📋 Plan: ' + encodeURIComponent(plan) + '%0A%0A' +
                 'COURSE DETAILS:%0A' +
-                '?? Course: ' + encodeURIComponent(course) + '%0A' +
-                '? Timing: ' + encodeURIComponent(timing) + '%0A' +
-                '??????????????????????%0A%0A' +
+                '📖 Course: ' + encodeURIComponent(course) + '%0A' +
+                '⏰ Timing: ' + encodeURIComponent(timing) + '%0A' +
+                '━━━━━━━━━━━━━━━━━━━━━━%0A%0A' +
                 'Please contact for 3-day FREE trial!';
             
             // Show success message
@@ -1522,7 +2195,7 @@
             // Hide form, show success message
             trialForm.style.display = 'none';
             successMsg.style.display = 'block';
-            successMsg.textContent = '? Your form has been submitted successfully!';
+            successMsg.textContent = '✅ Your form has been submitted successfully!';
             
             console.log('Opening WhatsApp...'); // Debug
             
