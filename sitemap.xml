@@ -8,36 +8,44 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- COURSES AS SEPARATE PAGES -->
+  <!-- COURSES HUB -->
   <url>
-    <loc>https://www.usmanibneaffan.com/qaida.html</loc>
+    <loc>https://www.usmanibneaffan.com/courses/index.html</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- INDIVIDUAL COURSES -->
   <url>
-    <loc>https://www.usmanibneaffan.com/quran-tajweed.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.usmanibneaffan.com/quran-translation.html</loc>
+    <loc>https://www.usmanibneaffan.com/courses/qaida-basics.html</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.usmanibneaffan.com/hadith-studies.html</loc>
+    <loc>https://www.usmanibneaffan.com/courses/quran-tajweed.html</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.usmanibneaffan.com/arabic-grammar.html</loc>
+    <loc>https://www.usmanibneaffan.com/courses/quran-translation.html</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.usmanibneaffan.com/courses/hadith-studies.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.usmanibneaffan.com/courses/arabic-grammar.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- BLOG / ARTICLES -->

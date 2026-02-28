@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses | Usman Ibne Affan Online Quran Academy</title>
+    <meta name="description"
+        content="Explore our comprehensive Online Quranic courses including Qaida, Tajweed, Translation, Hadith Studies, and Arabic Grammar. Classes for kids and adults.">
+
+    <link rel="icon" type="image/png" href="../../assets/logo_usman.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1e3a5f;
+            --teal: #5a9b8f;
+            --mint: #8fccbb;
+            --dark: #0f2942;
+            --light: #f0f7f6;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            padding: 0.7rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 75px;
+            height: 75px;
+            mix-blend-mode: multiply;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--navy), var(--teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--teal);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--teal), var(--mint));
+            color: white;
+            box-shadow: 0 4px 15px rgba(90, 155, 143, 0.3);
+        }
+
+        /* Section & Grid */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-top: 5px solid var(--teal);
+        }
+
+        .course-header {
+            background: var(--light);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .course-level {
+            background: var(--teal);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .course-body {
+            padding: 2rem;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .course-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #64748b;
+        }
+
+        .course-features li::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 800;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-wrap">
+            <div class="logo-box">
+                <img src="../../assets/logo_usman.png" alt="Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>Usman Ibne Affan</h1>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../index.html" class="nav-link" style="color: var(--teal); font-weight: 700;">Courses</a>
+                <a href="../../blog.html" class="nav-link">Articles</a>
+                <a href="../../index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <a href="../../index.html#contact" class="btn btn-primary">Enroll Now</a>
+        </div>
+    </header>
+
+    <div
+        style="background: linear-gradient(135deg, var(--dark), var(--navy)); color: white; padding: 5rem 2rem; text-align: center;">
+        <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Our Online Quranic Courses</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Standardized curriculum for all
+            ages. Learn from certified teachers anywhere in the world.</p>
+    </div>
+
+    <section class="section">
+        <div class="grid">
+            <!-- QAIDA -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Beginner</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Qaida Basics</h2>
+                    <p style="color: #64748b;">Foundation of Quranic Reading</p>
+                </div>
+                <div class="course-body">
+                    <p>Master Arabic alphabets and pronunciation using Noorani/Madani Qaida.</p>
+                    <ul class="course-features">
+                        <li>Makharij & Pronunciation</li>
+                        <li>Basic joining rules</li>
+                        <li>Duration: 2-3 months</li>
+                    </ul>
+                    <a href="qaida-basics.html" class="btn btn-primary"
+                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                </div>
+            </div>
+
+            <!-- TAJWEED -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Intermediate</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Quran with Tajweed</h2>
+                    <p style="color: #64748b;">Master of Recitation</p>
+                </div>
+                <div class="course-body">
+                    <p>Beautiful recitation with complete rules of Tajweed and articulation.</p>
+                    <ul class="course-features">
+                        <li>Advanced Tajweed Rules</li>
+                        <li>Tarteel and Beautification</li>
+                        <li>Duration: 6-12 months</li>
+                    </ul>
+                    <a href="quran-tajweed.html" class="btn btn-primary"
+                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                </div>
+            </div>
+
+            <!-- TRANSLATION -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Advanced</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Translation & Tafseer</h2>
+                    <p style="color: #64748b;">Understanding the Word of Allah</p>
+                </div>
+                <div class="course-body">
+                    <p>Word-by-word translation and contextual meaning of the Holy Quran.</p>
+                    <ul class="course-features">
+                        <li>Lafzi & Ba-Muhawara Translation</li>
+                        <li>Context of Revelation</li>
+                        <li>Duration: 12-18 months</li>
+                    </ul>
+                    <a href="quran-translation.html" class="btn btn-primary"
+                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                </div>
+            </div>
+
+            <!-- HADITH -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Scholarship</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Hadith Studies</h2>
+                    <p style="color: #64748b;">Uloom-ul-Hadith</p>
+                </div>
+                <div class="course-body">
+                    <p>In-depth study of Prophetic traditions and their classification.</p>
+                    <ul class="course-features">
+                        <li>Mustalah al-Hadith</li>
+                        <li>Major Sahih Collections</li>
+                        <li>Duration: 6 months+</li>
+                    </ul>
+                    <a href="hadith-studies.html" class="btn btn-primary"
+                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                </div>
+            </div>
+
+            <!-- ARABIC -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Linguistic</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Arabic Grammar</h2>
+                    <p style="color: #64748b;">Nahw & Sarf</p>
+                </div>
+                <div class="course-body">
+                    <p>Unlock the secrets of the Arabic language through intensive grammar study.</p>
+                    <ul class="course-features">
+                        <li>Syntax and Morphology</li>
+                        <li>Quranic Arabic Patterns</li>
+                        <li>Duration: 12 months</li>
+                    </ul>
+                    <a href="arabic-grammar.html" class="btn btn-primary"
+                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Usman Ibne Affan Online Quran Academy. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
