@@ -58,6 +58,45 @@
       }
     }
     </script>
+
+    <!-- Course Schema Markup -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Qaida for Beginners",
+        "description": "Foundation Course to learn Arabic alphabets, vowels, and pronunciation. Perfect for complete beginners.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Usman Ibne Affan Online Quran Academy",
+          "sameAs": "https://www.usmanibneaffan.com/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Quran with Tajweed",
+        "description": "Master the art of beautiful Quranic recitation with complete Tajweed rules and proper articulation.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Usman Ibne Affan Online Quran Academy",
+          "sameAs": "https://www.usmanibneaffan.com/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Quran with Translation",
+        "description": "Understand the divine message with word-by-word translation and contextual interpretation.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Usman Ibne Affan Online Quran Academy",
+          "sameAs": "https://www.usmanibneaffan.com/"
+        }
+      }
+    ]
+    </script>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.usmanibneaffan.com/">
     <meta property="og:title" content="Usman Ibne Affan | Online Quran Academy | Learn Quran with Tajweed">
@@ -1405,7 +1444,8 @@
                 curriculum designed for kids and adults in <strong>UK, USA, Canada, UAE, and Australia</strong>.</p>
         </div>
         <div class="grid">
-            <div class="course-card">
+            <!-- QAIDA COURSE -->
+            <div class="course-card" id="qaida-basics">
                 <div class="course-header">
                     <span class="course-level">Beginner</span>
                     <h4 class="course-title"
@@ -1429,9 +1469,16 @@
                         <li>Basic joining rules</li>
                         <li>Duration: 2-3 months</li>
                     </ul>
+                    <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #f0f0f0;">
+                        <a href="#quran-tajweed"
+                            style="color: var(--teal); font-weight: 700; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Next Step: Quran with Tajweed <span>→</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="course-card">
+            <!-- TAJWEED COURSE -->
+            <div class="course-card" id="quran-tajweed">
                 <div class="course-header">
                     <span class="course-level">Intermediate</span>
                     <h4 class="course-title"
@@ -1456,9 +1503,16 @@
                         <li>Sifaat (characteristics)</li>
                         <li>Duration: 6-12 months</li>
                     </ul>
+                    <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #f0f0f0;">
+                        <a href="#quran-translation"
+                            style="color: var(--teal); font-weight: 700; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Next Step: Quran with Translation <span>→</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="course-card">
+            <!-- TRANSLATION COURSE -->
+            <div class="course-card" id="quran-translation">
                 <div class="course-header">
                     <span class="course-level">Advanced</span>
                     <h4 class="course-title"
