@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Islamic Insights | Usman Ibne Affan Online Quran Academy</title>
+    <meta name="description"
+        content="Read our latest articles on the benefits of Tajweed, Quran memorization tips, and the life of Prophet Muhammad (ﷺ). Your hub for Islamic knowledge.">
+
+    <link rel="icon" type="image/png" href="assets/logo_usman.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1e3a5f;
+            --teal: #5a9b8f;
+            --mint: #8fccbb;
+            --dark: #0f2942;
+            --light: #f0f7f6;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: #1e293b;
+        }
+
+        .header {
+            background: #ffffff;
+            padding: 0.7rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 75px;
+            height: 75px;
+            mix-blend-mode: multiply;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--teal), var(--mint));
+            color: white;
+            box-shadow: 0 4px 15px rgba(90, 155, 143, 0.3);
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--teal);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(90, 155, 143, 0.2);
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-wrap">
+            <div class="logo-box">
+                <img src="assets/logo_usman.png" alt="Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>Usman Ibne Affan</h1>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#courses" class="nav-link">Courses</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <a href="index.html#contact" class="btn btn-primary">Join Today</a>
+        </div>
+    </header>
+
+    <section class="section">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h1 style="font-size: 3rem; color: var(--navy); margin-bottom: 1rem;">Islamic Knowledge Hub</h1>
+            <p style="font-size: 1.25rem; color: #64748b; max-width: 800px; margin: 0 auto;">Read our latest insights,
+                tips, and guides to enhance your spiritual and educational journey.</p>
+        </div>
+
+        <div class="grid">
+            <article class="card" id="benefits-tajweed">
+                <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--navy);">7 Benefits of Learning Quran
+                    with Tajweed</h2>
+                <p style="line-height: 1.8; color: #475569; margin-bottom: 1.5rem;">
+                    Discover why correct pronunciation is essential for every Muslim. From avoiding semantic mistakes to
+                    experiencing the true beauty of Allah's words, Tajweed is more than just a set of rules—it's a
+                    spiritual transformation that connects you deeper with the Quran.
+                </p>
+                <div style="color: var(--teal); font-weight: 700; cursor: pointer;">Full Article Coming Soon...</div>
+            </article>
+
+            <article class="card" id="memorize-fast">
+                <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--navy);">How to Memorize Quran Fast: 5
+                    Proven Tips</h2>
+                <p style="line-height: 1.8; color: #475569; margin-bottom: 1.5rem;">
+                    Tips from our expert Hifz instructors on how children and adults can effectively memorize the Holy
+                    Quran at home. We discuss the importance of early morning sessions, consistent daily goals, and the
+                    role of a qualified mentor in your Hifz journey.
+                </p>
+                <div style="color: var(--teal); font-weight: 700; cursor: pointer;">Full Article Coming Soon...</div>
+            </article>
+
+            <article class="card" id="seerat-un-nabi">
+                <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--navy);">The Importance of Seerat-un-Nabi
+                    in Daily Life</h2>
+                <p style="line-height: 1.8; color: #475569; margin-bottom: 1.5rem;">
+                    Understand how the life of Prophet Muhammad (ﷺ) serves as a perfect example for modern challenges.
+                    Learn how adopting the Sunnah in your character can improve family life, professional relationships,
+                    and inner peace in today's fast-paced world.
+                </p>
+                <div style="color: var(--teal); font-weight: 700; cursor: pointer;">Full Article Coming Soon...</div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Usman Ibne Affan Online Quran Academy. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

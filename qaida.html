@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qaida for Beginners | Usman Ibne Affan Online Quran Academy</title>
+    <meta name="description"
+        content="Start your Quranic journey with our Qaida Foundation Course. Perfect for complete beginners to learn Arabic alphabets and pronunciation.">
+
+    <!-- Course Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Qaida for Beginners",
+      "description": "Foundation Course to learn Arabic alphabets, vowels, and pronunciation. Perfect for complete beginners.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Usman Ibne Affan Online Quran Academy",
+        "sameAs": "https://www.usmanibneaffan.com/"
+      }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="assets/logo_usman.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1e3a5f;
+            --teal: #5a9b8f;
+            --mint: #8fccbb;
+            --dark: #0f2942;
+            --light: #f0f7f6;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            padding: 0.7rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 75px;
+            height: 75px;
+            mix-blend-mode: multiply;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--navy), var(--teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--teal);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--teal), var(--mint));
+            color: white;
+            box-shadow: 0 4px 15px rgba(90, 155, 143, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(90, 155, 143, 0.5);
+        }
+
+        /* Course Layout */
+        .course-page-hero {
+            background: linear-gradient(135deg, var(--dark), var(--navy));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .course-page-content {
+            max-width: 1000px;
+            margin: -3rem auto 4rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: #64748b;
+        }
+
+        .course-features-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .course-features-list li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .course-features-list li::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .course-page-content {
+                margin: 2rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-wrap">
+            <div class="logo-box">
+                <img src="assets/logo_usman.png" alt="Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>Usman Ibne Affan</h1>
+                    <p>Online Quran Academy</p>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#courses" class="nav-link">Courses</a>
+                <a href="index.html#plans" class="nav-link">Plans</a>
+                <a href="blog.html" class="nav-link">Articles</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <a href="index.html#contact" class="btn btn-primary">Enroll Now</a>
+        </div>
+    </header>
+
+    <div class="course-page-hero">
+        <h1 style="font-size: 3rem; margin-bottom: 1rem;">Qaida for Beginners</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">The essential foundation for reading the Holy Quran with Tajweed.
+        </p>
+    </div>
+
+    <div class="course-page-content">
+        <div class="course-meta">
+            <span><strong>Level:</strong> Beginner</span>
+            <span><strong>Duration:</strong> 2-3 Months</span>
+            <span><strong>Ages:</strong> 4+ and Adults</span>
+        </div>
+
+        <h2 style="color: var(--navy); margin-bottom: 1.5rem;">Course Overview</h2>
+        <p style="line-height: 1.8; font-size: 1.1rem; color: #475569; margin-bottom: 2rem;">
+            This course is designed for those who are just starting their Quranic journey. Whether you are a child or an
+            adult, our expert teachers will guide you through the Arabic alphabet, vowels, and basic joining rules using
+            the world-renowned Noorani Qaida or Madani Qaida.
+        </p>
+
+        <h3 style="color: var(--teal); margin-bottom: 1rem;">What You Will Learn</h3>
+        <ul class="course-features-list">
+            <li>Recognition of Arabic Letters (Huroof-e-Tahajji)</li>
+            <li>Correct Pronunciation (Makharij ur Huroof)</li>
+            <li>Vowels (Haroof-e-Maddah & Lin)</li>
+            <li>Rules of Tanween and Noon Sakinah</li>
+            <li>Basic joining of letters (Murakkabat)</li>
+            <li>Rules of Stopping (Waqf)</li>
+        </ul>
+
+        <div
+            style="margin-top: 3rem; background: #f8fafc; padding: 2.5rem; border-radius: 15px; text-align: center; border: 2px dashed var(--teal);">
+            <h3 style="margin-bottom: 1rem; color: var(--navy);">Ready to Start Your Journey?</h3>
+            <p style="margin-bottom: 2rem;">Join 500+ students and start with 3 FREE demo classes.</p>
+            <a href="index.html#contact" class="btn btn-primary" style="font-size: 1.2rem; padding: 1rem 3rem;">Book
+                Your Free Trial</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <img src="assets/logo_usman.png" style="width: 60px; margin-bottom: 1rem; filter: brightness(0) invert(1);">
+        <p>© 2026 Usman Ibne Affan Online Quran Academy. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
