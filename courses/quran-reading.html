@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quran with Translation & Tafseer Online | Master the Meanings - Usman Ibne Affan</title>
+    <title>Quran Reading Course (Nazra) | Fluent Quran Recitation Online - Usman Ibne Affan</title>
     <meta name="description"
-        content="Understand the word of Allah with our Quran Translation and Tafseer course. Expert English/Urdu translation for students worldwide.">
+        content="Learn to read the Holy Quran fluently with our Nazra course. Expert guidance on pronunciation and flow for students of all ages worldwide.">
 
     <!-- Course Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Course",
-      "name": "Quran with Translation",
-      "description": "Understand the divine message with word-by-word translation and contextual interpretation.",
+      "name": "Quran Reading (Nazra)",
+      "description": "Guided course to read the Holy Quran fluently, focusing on correct pronunciation and smooth recitation.",
       "provider": {
         "@type": "Organization",
         "name": "Usman Ibne Affan Online Quran Academy",
@@ -25,6 +25,8 @@
 
     <link rel="icon" type="image/png" href="../assets/logo_usman.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
         :root {
@@ -46,8 +48,10 @@
             font-family: 'Inter', sans-serif;
             background: var(--light);
             color: #1e293b;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* Header */
         .header {
             background: #ffffff;
             padding: 0.7rem 2rem;
@@ -86,42 +90,62 @@
             font-weight: 800;
         }
 
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
         .nav-menu {
             display: flex;
-            gap: 2.2rem;
-            align-items: center;
+            gap: 2rem;
         }
 
         .nav-link {
             text-decoration: none;
-            color: #475569;
-            font-weight: 500;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--teal);
         }
 
         .btn {
             display: inline-block;
             padding: 0.8rem 1.8rem;
-            border-radius: 8px;
-            font-weight: 600;
+            border-radius: 12px;
             text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            cursor: pointer;
             border: none;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--teal), var(--mint));
+            background: linear-gradient(135deg, var(--teal), var(--navy));
             color: white;
             box-shadow: 0 4px 15px rgba(90, 155, 143, 0.3);
         }
 
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 155, 143, 0.4);
+        }
+
+        /* Content */
         .course-page-hero {
-            background: linear-gradient(135deg, var(--dark), var(--navy));
-            color: white;
-            padding: 4rem 2rem;
+            background: linear-gradient(rgba(15, 41, 66, 0.9), rgba(15, 41, 66, 0.9)), url('https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80') center/cover;
+            padding: 8rem 2rem;
             text-align: center;
+            color: white;
         }
 
         .course-page-content {
-            max-width: 1000px;
+            max-width: 900px;
             margin: -3rem auto 4rem;
             background: white;
             padding: 3rem;
@@ -151,12 +175,14 @@
             align-items: center;
             gap: 0.8rem;
             font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         .course-features-list li::before {
             content: '✓';
             color: var(--teal);
             font-weight: 800;
+            font-size: 1.2rem;
         }
 
         .footer {
@@ -174,6 +200,11 @@
             .course-page-content {
                 margin: 2rem;
                 padding: 1.5rem;
+            }
+
+            .course-meta {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
@@ -204,79 +235,75 @@
     </header>
 
     <div class="course-page-hero">
-        <h1 style="font-size: 3rem; margin-bottom: 1rem;">Quran with Translation & Tafseer</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9;">Unlock the meanings of the Holy Quran for students worldwide with
-            our expert scholars.</p>
+        <h1 style="font-size: 3rem; margin-bottom: 1rem;">Fluent Quran Reading (Nazra)</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Master the flow and rhythm of the Holy Quran with expert guidance.
+        </p>
     </div>
 
     <div class="course-page-content">
         <div class="course-meta">
-            <span><strong>Level:</strong> Advanced</span>
-            <span><strong>Duration:</strong> 12-18 Months</span>
-            <span><strong>Focus:</strong> Meaning & Context</span>
+            <span><strong>Level:</strong> Elementary</span>
+            <span><strong>Duration:</strong> 6-12 Months</span>
+            <span><strong>Ages:</strong> 5+ and Adults</span>
         </div>
 
-        <h2 style="color: var(--navy); margin-bottom: 1.5rem;">Course Overview: Understanding the Divine Dialogue</h2>
+        <h2 style="color: var(--navy); margin-bottom: 1.5rem;">Course Overview: Transitioning to Fluency</h2>
         <p style="line-height: 1.8; font-size: 1.1rem; color: #475569; margin-bottom: 2rem;">
-            While recitation brings tranquility to the soul, understanding the meaning of the Quran brings guidance to
-            the mind and heart. At <strong>Usman Ibne Affan Online Quran Academy</strong>, our **Quran with Translation
-            Course** is designed to help students move beyond just reading the Arabic script to truly grasping the
-            message sent by Allah (SWT). This is a comprehensive journey that turns the Quran from a sacred text into a
-            living, breathing guide for your daily life.
+            Once a student has mastered the basics of the Arabic alphabet and the core rules of Tajweed through the
+            Qaida, the next natural step is <strong>Nazra-ul-Quran</strong> (Quran Reading). This course is designed to
+            transition students from reading individual words to reciting full verses and chapters with ease, speed, and
+            accuracy.
             <br><br>
-            Many Muslims recite the Quran daily without knowing what is being said. Our course addresses this gap by
-            providing a word-by-word and idiomatic translation. By understanding the literal and contextual meanings of
-            the verses, you will find your concentration (Khushu) in Salah improving and your connection with the Divine
-            strengthening. This course is perfect for students who have a basic understanding of Arabic or have already
-            completed their Nazra (reading) and Tajweed.
+            At <strong>Usman Ibne Affan Online Quran Academy</strong>, our Nazra course is more than just reading; it is
+            about developing a lifelong connection with the words of Allah. Many students can recognize words but
+            struggle with the flow and rhythm of long verses. Our expert tutors focus on building the "reading stamina"
+            necessary to recite for longer periods without losing focus on Tajweed rules.
         </p>
 
         <h3 style="color: var(--teal); margin-bottom: 1rem;">Primary Learning Outcomes</h3>
         <p style="line-height: 1.8; font-size: 1.1rem; color: #475569; margin-bottom: 1.5rem;">
-            Our curriculum is designed to provide a balance between linguistic precision and practical wisdom:
+            Our goal is to produce reciters who can pick up any part of the Quran and read it with confidence. Key
+            achievements include:
         </p>
         <ul class="course-features-list" style="margin-bottom: 2.5rem;">
-            <li><strong>Word-by-Word Translation:</strong> Breaking down each verse to understand the literal meaning of
-                every Arabic word, building your Quranic vocabulary.</li>
-            <li><strong>Idiomatic & Verse Translation:</strong> Providing the overall flow and meaning of the verse as
-                it is intended in the English (or Urdu) language.</li>
-            <li><strong>Basic Arabic Grammar:</strong> Learning the fundamental rules of Arabic syntax and morphology
-                that help you identify root words and verb scales in the Quran.</li>
-            <li><strong>Shan-e-Nuzool (Reason for Revelation):</strong> Understanding the historical and situational
-                context in which specific verses were revealed to the Prophet ﷺ.</li>
-            <li><strong>Theme Identification:</strong> Recognizing the core messages of different Surahs, such as legal
-                rulings, stories of past Prophets, and philosophical reflections on creation.</li>
-            <li><strong>Practical Life Lessons:</strong> Deriving actionable advice from the verses to improve your
-                character, family life, and social interactions.</li>
+            <li><strong>Continuous Flow:</strong> Developing the ability to link words naturally without unnecessary
+                pauses, mimicking the recitation of professional Qaris.</li>
+            <li><strong>Compound Rule Application:</strong> Moving from isolated Tajweed rules to applying them
+                simultaneously in real-time during recitation.</li>
+            <li><strong>Breath Control:</strong> Learning where to stop (Waqf) and where to continue to maintain the
+                meaning and beauty of the verses.</li>
+            <li><strong>Pronunciation Perfection:</strong> Continuous refinement of the heavy and light letters
+                (Mufakham and Muraqqaq) to ensure authenticity.</li>
+            <li><strong>Confidence Building:</strong> Overcoming the fear of long surahs through systematic practice and
+                guided repetition.</li>
         </ul>
 
         <h3 style="color: var(--teal); margin-bottom: 1rem;">Our Teaching Methodology</h3>
         <p style="line-height: 1.8; font-size: 1.1rem; color: #475569; margin-bottom: 2rem;">
-            We use a reflective and academic approach to ensure deep understanding:
+            We employ a layered teaching approach to ensure progress is steady and measurable.
             <br><br>
-            <strong>Interactive Translation Workshops:</strong> Rather than just listening to a lecture, students are
-            encouraged to participate in translating verses based on the words they've already learned. This active
-            recall method speeds up learning.
+            <strong>The Listen-Read-Correct Cycle:</strong> Each session involves the teacher reciting a verse, the
+            student following, and then the student reading independently while the teacher provides real-time
+            corrections. This auditory feedback loop is essential for developing a 'Qari's ear.'
             <br><br>
-            <strong>Reliable Scholarly Sources:</strong> We utilize authentic and widely accepted translations (such as
-            those by Pickthall, Yusuf Ali, or Sahih International) paired with classical commentaries for total
-            accuracy.
+            <strong>Gradual Complexity:</strong> We start with shorter Surahs from Para 30 (Juz Amma) and gradually move
+            toward longer chapters. This ensures the student isn't overwhelmed by the sheer volume of text in early
+            stages.
             <br><br>
-            <strong>Focus on Frequency:</strong> We prioritize the 80% of words in the Quran that repeat most
-            frequently, allowing you to understand a large portion of the Quran in a relatively short time.
+            <strong>Daily Reading Targets:</strong> Students are given specific portions to prepare for the next class.
+            Success in Nazra comes from daily contact with the Mushaf, so we encourage at least 15-20 minutes of
+            self-practice.
             <br><br>
-            <strong>Reflective Journaling:</strong> Students are encouraged to keep a reflection log, noting how
-            specific verses relate to their current life situations, turning academic study into spiritual growth.
-            <br><br>
-            <strong>One-on-One Dialogue:</strong> Your sessions are safe spaces for asking deep questions about the
-            meaning of verses and how they fit into a cohesive Islamic worldview.
+            <strong>One-on-One Attention:</strong> Your teacher's focus is 100% on you. Unlike group classes where
+            mistakes can go unnoticed, our one-on-one sessions ensure every slip of the tongue is addressed and
+            corrected immediately.
         </p>
 
         <div
             style="margin-top: 3rem; background: #f8fafc; padding: 2.5rem; border-radius: 15px; text-align: center; border: 2px dashed var(--teal);">
-            <h3 style="margin-bottom: 1rem; color: var(--navy);">Hear the Message in Your Heart</h3>
-            <p style="margin-bottom: 2rem;">Stop just reading and start understanding. Book your assessment and 3 FREE
-                demo classes now to begin your journey of understanding.</p>
+            <h3 style="margin-bottom: 1rem; color: var(--navy);">Experience the Beauty of Recitation</h3>
+            <p style="margin-bottom: 2rem;">Unlock the ability to read the Quran with flow and precision. Book 3 FREE
+                demo classes now.</p>
             <a href="../index.html#contact" class="btn btn-primary" style="font-size: 1.2rem; padding: 1rem 3rem;">Start
                 Your Free Trial</a>
         </div>

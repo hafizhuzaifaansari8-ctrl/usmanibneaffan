@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Courses | Usman Ibne Affan Online Quran Academy</title>
+    <title>All Online Quran Courses | Learn Quran with Tajweed - Usman Ibne Affan</title>
     <meta name="description"
-        content="Explore our comprehensive Online Quranic courses including Qaida, Tajweed, Translation, Hadith Studies, and Arabic Grammar. Classes for kids and adults.">
+        content="Explore our comprehensive range of 12 online Quranic courses. From Noorani Qaida and Hifz to Tafseer, Arabic Grammar, and Dars-e-Nizami. Join 500+ successful students.">
 
-    <link rel="icon" type="image/png" href="../../assets/logo_usman.png">
+    <link rel="icon" type="image/png" href="../assets/logo_usman.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <style>
@@ -97,13 +97,19 @@
             font-weight: 600;
             text-decoration: none;
             border: none;
+            transition: all 0.3s;
             cursor: pointer;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--teal), var(--mint));
+            background: linear-gradient(135deg, var(--teal), var(--navy));
             color: white;
             box-shadow: 0 4px 15px rgba(90, 155, 143, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 155, 143, 0.4);
         }
 
         /* Section & Grid */
@@ -125,7 +131,14 @@
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
             border-top: 5px solid var(--teal);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
 
         .course-header {
@@ -149,11 +162,15 @@
 
         .course-body {
             padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .course-features {
             list-style: none;
-            margin-top: 1rem;
+            margin: 1.5rem 0;
+            flex-grow: 1;
         }
 
         .course-features li {
@@ -182,6 +199,10 @@
             .nav-menu {
                 display: none;
             }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -190,108 +211,130 @@
     <header class="header">
         <div class="header-wrap">
             <div class="logo-box">
-                <img src="../../assets/logo_usman.png" alt="Logo" class="logo-img">
+                <img src="../assets/logo_usman.png" alt="Logo" class="logo-img">
                 <div class="logo-text">
-                    <h1>Usman Ibne Affan</h1>
+                    <div
+                        style="font-size: 1.4rem; background: linear-gradient(135deg, var(--navy), var(--teal)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">
+                        Usman Ibne Affan</div>
                 </div>
             </div>
-            <nav class="nav-menu">
-                <a href="../../index.html" class="nav-link">Home</a>
-                <a href="../index.html" class="nav-link" style="color: var(--teal); font-weight: 700;">Courses</a>
-                <a href="../../blog.html" class="nav-link">Articles</a>
-                <a href="../../index.html#contact" class="nav-link">Contact</a>
+                        <nav class="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link" style="color: var(--teal); font-weight: 700;">Courses</a>
+                <a href="../#plans" class="nav-link">Plans</a>
+                <a href="../#reviews" class="nav-link">Reviews</a>
+                <a href="../faq.html" class="nav-link">FAQ</a>
+                <a href="../blog.html" class="nav-link">Articles</a>
+                <a href="../#contact" class="nav-link">Contact</a>
             </nav>
-            <a href="../../index.html#contact" class="btn btn-primary">Enroll Now</a>
+            <button onclick="window.location.href='../index.html#contact'" class="btn btn-primary"
+                style="cursor:pointer; border:none;">Enroll Now</button>
         </div>
     </header>
 
     <div
-        style="background: linear-gradient(135deg, var(--dark), var(--navy)); color: white; padding: 5rem 2rem; text-align: center;">
-        <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Our Online Quranic Courses</h1>
+        style="background: linear-gradient(135deg, var(--dark), var(--navy)); color: white; padding: 6rem 2rem; text-align: center;">
+        <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Explore All Courses</h1>
         <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Standardized curriculum for all
-            ages. Learn from certified teachers anywhere in the world.</p>
+            ages worldwide. Join over 500 successful students on their Quranic journey.</p>
     </div>
 
     <section class="section">
         <div class="grid">
-            <!-- QAIDA -->
+            <!-- 1. Noorani Qaida -->
             <div class="course-card">
                 <div class="course-header">
                     <span class="course-level">Beginner</span>
-                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Qaida Basics</h2>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Noorani Qaida</h2>
                     <p style="color: #64748b;">Foundation of Quranic Reading</p>
                 </div>
                 <div class="course-body">
-                    <p>Master Arabic alphabets and pronunciation using Noorani/Madani Qaida.</p>
+                    <p>Master Arabic alphabets and pronunciation using Noorani/Madani Qaida step-by-step.</p>
                     <ul class="course-features">
                         <li>Makharij & Pronunciation</li>
                         <li>Basic joining rules</li>
-                        <li>Duration: 2-3 months</li>
+                        <li>Foundation for Nazra</li>
                     </ul>
-                    <a href="qaida-basics.html" class="btn btn-primary"
-                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                    <a href="qaida-basics.html" class="btn btn-primary" style="text-align: center;">Course Details</a>
                 </div>
             </div>
 
-            <!-- TAJWEED -->
-            <div class="course-card">
+            <!-- 2. Quran Reading -->
+            <div class="course-card" style="border-top-color: var(--mint);">
                 <div class="course-header">
-                    <span class="course-level">Intermediate</span>
-                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Quran with Tajweed</h2>
-                    <p style="color: #64748b;">Master of Recitation</p>
+                    <span class="course-level">Beginner</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Quran Reading</h2>
+                    <p style="color: #64748b;">Fluent Recitation (Nazra)</p>
                 </div>
                 <div class="course-body">
-                    <p>Beautiful recitation with complete rules of Tajweed and articulation.</p>
+                    <p>A guided course to help learners read the Holy Quran fluently with smooth flow and rhythm.</p>
                     <ul class="course-features">
-                        <li>Advanced Tajweed Rules</li>
-                        <li>Tarteel and Beautification</li>
-                        <li>Duration: 6-12 months</li>
+                        <li>Fluency in recitation</li>
+                        <li>Confidence building</li>
+                        <li>Daily guided practice</li>
                     </ul>
-                    <a href="quran-tajweed.html" class="btn btn-primary"
-                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                    <a href="quran-reading.html" class="btn btn-primary" style="text-align: center;">Course Details</a>
                 </div>
             </div>
 
-            <!-- TRANSLATION -->
+            <!-- 3. Hifz -->
+            <div class="course-card" style="border-top-color: var(--navy);">
+                <div class="course-header">
+                    <span class="course-level">Intermediate</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Hifz-ul-Quran</h2>
+                    <p style="color: #64748b;">Quran Memorization</p>
+                </div>
+                <div class="course-body">
+                    <p>Structured course to memorize the Holy Quran with accuracy and daily revision plans.</p>
+                    <ul class="course-features">
+                        <li>Custom Hifz schedules</li>
+                        <li>Daily revision (Sabqi)</li>
+                        <li>Certified Hafiz tutors</li>
+                    </ul>
+                    <a href="quran-memorization.html" class="btn btn-primary" style="text-align: center;">Course
+                        Details</a>
+                </div>
+            </div>
+
+            <!-- 4. Translation -->
             <div class="course-card">
                 <div class="course-header">
                     <span class="course-level">Advanced</span>
-                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Translation & Tafseer</h2>
-                    <p style="color: #64748b;">Understanding the Word of Allah</p>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Quran Translation</h2>
+                    <p style="color: #64748b;">Understanding Divine Meaning</p>
                 </div>
                 <div class="course-body">
-                    <p>Word-by-word translation and contextual meaning of the Holy Quran.</p>
+                    <p>Word-by-word translation and contextual interpretation of the Quranic verses.</p>
                     <ul class="course-features">
-                        <li>Lafzi & Ba-Muhawara Translation</li>
-                        <li>Context of Revelation</li>
-                        <li>Duration: 12-18 months</li>
+                        <li>Lafzi Tarjuma</li>
+                        <li>Context of revelations</li>
+                        <li>Basic grammar rules</li>
                     </ul>
-                    <a href="quran-translation.html" class="btn btn-primary"
-                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                    <a href="quran-translation.html" class="btn btn-primary" style="text-align: center;">Course
+                        Details</a>
                 </div>
             </div>
 
-            <!-- HADITH -->
-            <div class="course-card">
+            <!-- 5. Tafseer -->
+            <div class="course-card" style="border-top-color: var(--dark);">
                 <div class="course-header">
-                    <span class="course-level">Scholarship</span>
-                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Hadith Studies</h2>
-                    <p style="color: #64748b;">Uloom-ul-Hadith</p>
+                    <span class="course-level">Advanced</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Tafseer-ul-Quran</h2>
+                    <p style="color: #64748b;">Exegesis & Commentary</p>
                 </div>
                 <div class="course-body">
-                    <p>In-depth study of Prophetic traditions and their classification.</p>
+                    <p>In-depth exploration of wisdom and historical context behind Quranic verses.</p>
                     <ul class="course-features">
-                        <li>Mustalah al-Hadith</li>
-                        <li>Major Sahih Collections</li>
-                        <li>Duration: 6 months+</li>
+                        <li>Verse-by-verse analysis</li>
+                        <li>Scholarly perspectives</li>
+                        <li>Practical applications</li>
                     </ul>
-                    <a href="hadith-studies.html" class="btn btn-primary"
-                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                    <a href="tafseer-quran.html" class="btn btn-primary" style="text-align: center;">Course Details</a>
                 </div>
             </div>
 
-            <!-- ARABIC -->
-            <div class="course-card">
+            <!-- 6. Arabic -->
+            <div class="course-card" style="border-top-color: var(--mint);">
                 <div class="course-header">
                     <span class="course-level">Linguistic</span>
                     <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Arabic Grammar</h2>
@@ -301,19 +344,248 @@
                     <p>Unlock the secrets of the Arabic language through intensive grammar study.</p>
                     <ul class="course-features">
                         <li>Syntax and Morphology</li>
-                        <li>Quranic Arabic Patterns</li>
-                        <li>Duration: 12 months</li>
+                        <li>Quranic vocabulary</li>
+                        <li>Textual analysis</li>
                     </ul>
-                    <a href="arabic-grammar.html" class="btn btn-primary"
-                        style="width: 100%; text-align: center; margin-top: 1.5rem;">Course Details</a>
+                    <a href="arabic-grammar.html" class="btn btn-primary" style="text-align: center;">Course Details</a>
+                </div>
+            </div>
+
+            <!-- 7. New Muslim -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Foundational</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">New Muslim Guide</h2>
+                    <p style="color: #64748b;">Support for Reverts</p>
+                </div>
+                <div class="course-body">
+                    <p>Warm and supportive guide to basic Islamic beliefs, prayer, and lifestyle.</p>
+                    <ul class="course-features">
+                        <li>Basic Aqeedah</li>
+                        <li>Salah training</li>
+                        <li>Muslim lifestyle basics</li>
+                    </ul>
+                    <a href="new-muslim-course.html" class="btn btn-primary" style="text-align: center;">Course
+                        Details</a>
+                </div>
+            </div>
+
+            <!-- 8. Seerat -->
+            <div class="course-card" style="border-top-color: var(--mint);">
+                <div class="course-header">
+                    <span class="course-level">Character</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Life of Prophet (ﷺ)</h2>
+                    <p style="color: #64748b;">Seerat-un-Nabi</p>
+                </div>
+                <div class="course-body">
+                    <p>Study the life and character of the Prophet ﷺ as a model for modern living.</p>
+                    <ul class="course-features">
+                        <li>Historical context</li>
+                        <li>Prophetic manners</li>
+                        <li>Universal ethics</li>
+                    </ul>
+                    <a href="seerat-un-nabi.html" class="btn btn-primary" style="text-align: center;">Course Details</a>
+                </div>
+            </div>
+
+            <!-- 9. Tajweed Masterclass -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Intermediate</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Tajweed & Tarteel</h2>
+                    <p style="color: #64748b;">Perfecting Recitation</p>
+                </div>
+                <div class="course-body">
+                    <p>Master the phonetics and rhythm of the Quran for a beautiful recitation sound.</p>
+                    <ul class="course-features">
+                        <li>Voice Modulation</li>
+                        <li>Advanced Phonetics</li>
+                        <li>Rhythmic flow</li>
+                    </ul>
+                    <a href="quran-tajweed.html" class="btn btn-primary" style="text-align: center;">Course Details</a>
+                </div>
+            </div>
+
+            <!-- 10. Dars-e-Nizami -->
+            <div class="course-card" style="border-top-color: var(--dark);">
+                <div class="course-header">
+                    <span class="course-level">Scholarship</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Dars-e-Nizami</h2>
+                    <p style="color: #64748b;">Foundation scholarship</p>
+                </div>
+                <div class="course-body">
+                    <p>Traditional classical curriculum for those seeking deeper Islamic expertise.</p>
+                    <ul class="course-features">
+                        <li>Classical Arabic texts</li>
+                        <li>Jurisprudence (Fiqh)</li>
+                        <li>Hadith sciences</li>
+                    </ul>
+                    <a href="dars-e-nizami.html" class="btn btn-primary" style="text-align: center;">Course Details</a>
+                </div>
+            </div>
+
+            <!-- 11. Short Shariah -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Practical</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Fiqh & Shariah</h2>
+                    <p style="color: #64748b;">Islamic Law Basics</p>
+                </div>
+                <div class="course-body">
+                    <p>Essential rulings for daily worship, ethics, and worldly transactions.</p>
+                    <ul class="course-features">
+                        <li>Salah & Tharah</li>
+                        <li>Ethical Commerce</li>
+                        <li>Modern legal issues</li>
+                    </ul>
+                    <a href="shariah-basics.html" class="btn btn-primary" style="text-align: center;">Course Details</a>
+                </div>
+            </div>
+
+            <!-- 12. Essential Knowledge -->
+            <div class="course-card" style="border-top-color: var(--mint);">
+                <div class="course-header">
+                    <span class="course-level">Fundamental</span>
+                    <h2 style="color: var(--navy); margin-bottom: 0.5rem;">Farz-e-Uloom</h2>
+                    <p style="color: #64748b;">Mandatory Knowledge</p>
+                </div>
+                <div class="course-body">
+                    <p>The core beliefs and practices every Muslim must possess for success.</p>
+                    <ul class="course-features">
+                        <li>Pillars of Faith</li>
+                        <li>Daily ritual purity</li>
+                        <li>Halal/Haram Ethics</li>
+                    </ul>
+                    <a href="essential-islamic-knowledge.html" class="btn btn-primary"
+                        style="text-align: center;">Course
+                        Details</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <p>© 2026 Usman Ibne Affan Online Quran Academy. All rights reserved.</p>
+    <!-- FOOTER -->
+    <footer class="footer" style="background: var(--dark); padding: 4rem 2rem; color: white; text-align: center;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div
+                style="background: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 5px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border: 3px solid var(--mint);">
+                <img src="../assets/logo_usman.png" alt="Logo"
+                    style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+            </div>
+            <div style="text-align: left;">
+                <h3 style="margin-bottom: 0; color: white;">Usman Ibne Affan</h3>
+                <p style="color: var(--mint); font-weight: 700; margin-top: 0;">Online Quran Academy</p>
+            </div>
+        </div>
+
+        <style>
+            .footer-nav a {
+                color: rgba(255, 255, 255, 0.75);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.95rem;
+                padding: 0.3rem 0;
+                transition: color 0.3s ease;
+            }
+
+            .footer-nav a:hover {
+                color: var(--mint);
+            }
+
+            .footer-nav .sep {
+                color: rgba(255, 255, 255, 0.2);
+            }
+
+            .footer-social a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                text-decoration: none;
+            }
+
+            .footer-social a.fb {
+                background: rgba(24, 119, 242, 0.15);
+                color: #1877f2;
+            }
+
+            .footer-social a.fb:hover {
+                background: #1877f2;
+                color: white;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
+            }
+
+            .footer-social a.wa {
+                background: rgba(37, 211, 102, 0.15);
+                color: #25D366;
+            }
+
+            .footer-social a.wa:hover {
+                background: #25D366;
+                color: white;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            }
+
+            .footer-social a.em {
+                background: rgba(234, 67, 53, 0.15);
+                color: #EA4335;
+            }
+
+            .footer-social a.em:hover {
+                background: #EA4335;
+                color: white;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(234, 67, 53, 0.4);
+            }
+        </style>
+
+        <nav class="footer-nav"
+            style="margin: 1.5rem 0; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+            <a href="../index.html">Home</a>
+            <span class="sep">|</span>
+            <a href="../index.html">All Courses</a>
+            <span class="sep">|</span>
+            <a href="../index.html#plans">Pricing</a>
+            <span class="sep">|</span>
+            <a href="../index.html#reviews">Reviews</a>
+            <span class="sep">|</span>
+            <a href="../blog.html">Articles</a>
+            <span class="sep">|</span>
+            <a href="../faq.html">FAQ</a>
+            <span class="sep">|</span>
+            <a href="../#contact">Contact</a>
+        </nav>
+
+        <div class="footer-social" style="margin: 1.5rem 0; display: flex; justify-content: center; gap: 1rem;">
+            <a href="https://www.facebook.com/share/1G1CzW23zH/" target="_blank" class="fb"><svg width="22" height="22"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg></a>
+            <a href="https://wa.me/923181032854" target="_blank" class="wa"><svg width="22" height="22"
+                    viewBox="0 0 448 512" fill="currentColor">
+                    <path
+                        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.7 68.9 27.1 106.1 27.1h.1c122.3 0 224-101.7 224-224 0-59.3-23.1-115.1-65-157.1z" />
+                </svg></a>
+            <a href="mailto:hafizhuzaifaansari8@gmail.com" class="em"><svg width="22" height="22" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg></a>
+        </div>
+
+        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 1rem;">© 2026 Usman Ibne Affan. All rights reserved.</p>
     </footer>
 </body>
 
 </html>
+
+
+
+
